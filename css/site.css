@@ -160,6 +160,39 @@ pre {
   width: 30px;
 }
 
+.Hero-ticker {
+  padding-left: 3px;
+  position: relative;
+}
+
+.Hero-tickerWord {
+  min-width: 200px;
+  opacity: 0;
+  position: absolute;
+}
+
+.Hero-tickerLetter {
+  display: inline-block;
+  float: left;
+  position: relative;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.Hero-tickerLetter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.Hero-tickerLetter.behind {
+  transform: rotateX(-90deg);
+}
+
+.Hero-tickerLetter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 /* Intro */
 
 .Intro {
