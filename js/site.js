@@ -86,7 +86,7 @@
       wordArray.push(letters);
     }
 
-    changeWord();
+    setTimeout(changeWord, 4000);
   }
 
   init();
