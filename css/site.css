@@ -166,16 +166,16 @@ pre {
   transform-origin: 50% 50% 25px;
 }
 
-.Hero-tickerLetter.out {
+.Hero-tickerLetter.is-out {
   transform: rotateX(90deg);
   transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.Hero-tickerLetter.behind {
+.Hero-tickerLetter.is-behind {
   transform: rotateX(-90deg);
 }
 
-.Hero-tickerLetter.in {
+.Hero-tickerLetter.is-in {
   transform: rotateX(0deg);
   transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -267,10 +267,6 @@ pre {
 @media (min-width: 40em) {
   .Team-member {
     flex-basis: 33.3%;
-  }
-
-  .Team-member:nth-child(9),
-  .Team-member:nth-child(10) {
     flex-grow: initial;
   }
 }
@@ -404,6 +400,43 @@ pre {
   .TeamMember--pete .TeamMember-bio::after { background-color: #f90; }
 }
 
+.Team-quote {
+  display: none;
+}
+
+@media (min-width: 60em) {
+  .Team-quote {
+    background: #f90;
+    color: #fff;
+    flex: 1 0 25%;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .Team-quote.is-visible {
+    display: block;
+  }
+
+  .Team-quote::before {
+    background: inherit;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.25s;
+    z-index: 2;
+  }
+
+  .Team-quote:hover::before {
+    opacity: 0;
+  }
+}
+
 /* Companies */
 
 .Companies {
@@ -472,14 +505,11 @@ pre {
 @media (min-width: 40em) {
   .Companies-item {
     flex-basis: 33.3%;
+    flex-grow: initial;
   }
 
   .Companies-itemDouble {
     flex-basis: 66.6%;
-  }
-
-  .Companies-item:nth-child(5) {
-    flex-grow: initial;
   }
 }
 

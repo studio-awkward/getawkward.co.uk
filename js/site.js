@@ -15,11 +15,23 @@
     blueDark: '#58c4ea'
   };
 
+  var quotes = [
+    {
+      'text': 'I hate that line height, it\'s gross.',
+      'person': 'Ruth'
+    },
+    {
+      'text': 'I love seeing if words make me feel sick',
+      'person': 'Ruth'
+    }
+  ];
+
   function init () {
     initWelcomeConsoleLog();
     initHeroTicker();
     initBackgroundFlourishes();
     initFlourishes();
+    initTeamShuffle();
   }
 
   function initWelcomeConsoleLog () {
@@ -62,7 +74,7 @@
       }
 
       for (var i = 0; i < nextWord.length; i++) {
-        nextWord[i].className = 'Hero-tickerLetter behind';
+        nextWord[i].className = 'Hero-tickerLetter is-behind';
         nextWord[0].parentElement.style.opacity = 1;
         animateLetterIn(nextWord, i);
       }
@@ -73,24 +85,24 @@
 
     function animateLetterOut (currentWord, i) {
       setTimeout(function() {
-    		currentWord[i].className = 'Hero-tickerLetter out';
+    		currentWord[i].className = 'Hero-tickerLetter is-out';
       }, i * 80);
     }
 
     function animateLetterIn (nextWord, i) {
       setTimeout(function() {
-    		nextWord[i].className = 'Hero-tickerLetter in';
+    		nextWord[i].className = 'Hero-tickerLetter is-in';
       }, 340 + (i * 80));
     }
 
     function splitLetters (word) {
       var content = word.innerHTML;
-      word.innerHTML = '';
+      word.textContent = '';
       var letters = [];
       for (var i = 0; i < content.length; i++) {
         var letter = document.createElement('span');
         letter.className = 'Hero-tickerLetter';
-        letter.innerHTML = content.charAt(i);
+        letter.textContent = content.charAt(i);
         word.appendChild(letter);
         letters.push(letter);
       }
@@ -173,6 +185,27 @@
     var colourIndex = utils.pickRandomProperty(colours);
     flourish.colour = colours[colourIndex];
     return flourish;
+  }
+
+  function initTeamShuffle () {
+    var teamMembers = document.querySelector('.js-Team-members');
+    for (var i = teamMembers.children.length; i >= 0; i--) {
+      teamMembers.appendChild(teamMembers.children[Math.random() * i | 0]);
+    }
+    var teamQuotes = document.querySelectorAll('.js-Team-quote');
+    for (var i = 0; i < teamQuotes.length; i++) {
+      var quoteEl = teamQuotes[i];
+      var quoteIndex = utils.randomBetween(0, quotes.length);
+      var quote = quotes[quoteIndex];
+
+      var colourIndex = utils.pickRandomProperty(colours);
+      var colour = colours[colourIndex];
+
+      quoteEl.className += ' is-visible';
+      quoteEl.style.background = colour;
+      quoteEl.querySelector('h4').textContent = quote.text;
+      quoteEl.querySelector('p').textContent = quote.person;
+    }
   }
 
   var utils = {
