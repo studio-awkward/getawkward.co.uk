@@ -341,6 +341,7 @@ pre {
   display: flex;
   overflow-x: scroll;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (min-width: 40em) {
@@ -576,6 +577,7 @@ pre {
   display: flex;
   overflow-x: scroll;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (min-width: 40em) {
@@ -650,7 +652,6 @@ pre {
   display: block;
   font-weight: 700;
   margin: 1rem 0;
-  padding-left: 40px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -660,15 +661,21 @@ pre {
   text-decoration: underline;
 }
 
-.Company-link::before {
-  background: #fac90d;
-  content: "";
-  display: block;
-  height: 10px;
-  left: 0;
-  position: absolute;
-  top: 5px;
-  width: 30px;
+@media (min-width: 40em) {
+  .Company-link {
+    padding-left: 40px;
+  }
+
+  .Company-link::before {
+    background: #fac90d;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 30px;
+  }
 }
 
 /* Projects */
