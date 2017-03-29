@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600">
+<defs>
+    <style>
+        .cls-1{fill:none;}
+        .cls-2{fill:#08313f;}
+        .cls-3{fill:url(#radial-gradient);}
+        .cls-4{fill:#fefbde;}
+        .cls-5{opacity:0.6;}
+        .cls-6{clip-path:url(#clip-path);}
+        .cls-7{fill:#fff;}
+        .cls-8{fill:#f26522;}
+        .cls-9{fill:#1b75bc;}
+        .cls-10{fill:#ffde17;}
+        .cls-11{fill:#fff200;}
+        .cls-12{fill:#f1f2f2;}
+        .cls-13{opacity:0.1;}
+        .cls-14{clip-path:url(#clip-path-2);}
+        .cls-15{fill:#808285;}
+        .cls-16{fill:#c6b235;}
+        .cls-17{clip-path:url(#clip-path-3);}
+        .cls-18{clip-path:url(#clip-path-4);}
+        .cls-19{clip-path:url(#clip-path-5);}
+        .cls-20{opacity:0.5;}
+        .cls-21{fill:url(#linear-gradient);}
+        .cls-22{fill:url(#linear-gradient-2);}
+        .cls-23{fill:url(#linear-gradient-3);}
+        .cls-24{fill:url(#linear-gradient-4);}
+
+        #wrap #NightSky {
+          -webkit-animation: rotate 60s infinite linear;
+          transform-origin: 50% 50%;
+        }
+
+        @keyframes rotate {
+          from {transform: rotate(0deg);}
+          to {transform: rotate(359deg);}
+        }
+
+        #wrap #Topwavysea {
+          animation: sea-top 4s infinite;
+        }
+
+        #wrap #MidWavySea {
+          animation: sea-top 6s infinite;
+        }
+
+        #wrap #BottomWavySea {
+          animation: sea-top 8s infinite;
+        }
+
+        @keyframes sea-top {
+          from {
+            transform: rotate(0deg) translate(-10px) rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg) translate(-10px) rotate(-360deg);
+          }
+        }
+
+        #wrap #BottomRightLight {
+          opacity: 0;
+          animation: light 12s infinite;
+        }
+        #wrap #BottomLeftLight {
+          opacity: 0;
+          animation: light 12s infinite;
+          animation-delay: 3s;
+        }
+        #wrap #TopLeftLight {
+          opacity: 0;
+          animation: light 12s infinite;
+          animation-delay: 6s;
+        }
+        #wrap #TopRightLight {
+          opacity: 0;
+          animation: light 12s infinite;
+          animation-delay: 9s;
+        }
+
+        @keyframes light {
+          0%, 100% {
+            opacity: 0;
+          }
+          25% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 1;
+          }
+          75% {
+            opacity: 0;
+          }
+        }
+    </style>
+    <radialGradient id="radial-gradient" cx="90.92" cy="220.37" r="25.71" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#fff"/>
+        <stop offset="1" stop-color="#edeccb"/>
+    </radialGradient>
+    <clipPath id="clip-path">
+        <line class="cls-1" x1="353.32" y1="258.44" x2="353.32" y2="250.99"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+        <polygon class="cls-1" points="327.61 443.42 352.3 443.42 352.3 227.72 335.52 227.72 327.61 443.42"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+        <path class="cls-1" d="M443.48,347.89c-84.05,4.36-104.28,2.95-243.16-21s-277.56-.6-277.56-.6l-.14,34L-77.59,635l857.21,1.84L779.84,362l.25-64.75C684.73,291.56,527.53,343.53,443.48,347.89Z"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+        <path class="cls-1" d="M445.84,391.4c-80.07,6.67-106.77,1.18-245.62-36.41s-277.56-.47-277.56-.47l-.19,53.54-.3,228,857.22,1.45.3-228,.36-102.09C684.7,298.54,525.91,384.73,445.84,391.4Z"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+        <path class="cls-1" d="M450.69,449.39c-59.51,10.07-111.82,6.93-250.62-47.28s-277.56-.19-277.56-.19l-.25,77.59-.4,157.72,857.23.58.39-157.72.47-148C684.61,319.43,537.94,434.63,450.69,449.39Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="352.92" y1="345.18" x2="779.61" y2="345.18" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#fff"/>
+        <stop offset="0.03" stop-color="#fefce6"/>
+        <stop offset="0.08" stop-color="#fdf6ba"/>
+        <stop offset="0.14" stop-color="#fcf092"/>
+        <stop offset="0.2" stop-color="#fbec70"/>
+        <stop offset="0.27" stop-color="#fae853"/>
+        <stop offset="0.35" stop-color="#f9e43c"/>
+        <stop offset="0.44" stop-color="#f9e22a"/>
+        <stop offset="0.54" stop-color="#f8e01d"/>
+        <stop offset="0.68" stop-color="#f8df16"/>
+        <stop offset="1" stop-color="#f8df14"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="353.16" y1="339.63" x2="-77.59" y2="339.63" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="138.04" y1="253.57" x2="138.04" y2="-2.88" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="352.92" y1="126.81" x2="778.93" y2="126.81" xlink:href="#linear-gradient"/>
+</defs>
+<title>SVG-animations_Lighthouse</title>
+<g id="wrap">
+    <g id="NightSky">
+        <rect class="cls-2" x="-4.82" y="-3.11" width="610.99" height="609.66"/>
+        <circle class="cls-3" cx="90.92" cy="220.37" r="25.71"/>
+        <circle class="cls-4" cx="217.81" cy="60.21" r="2.29"/>
+        <circle class="cls-4" cx="413.9" cy="61.74" r="2.29"/>
+        <circle class="cls-4" cx="540.58" cy="254.72" r="2.29"/>
+        <circle class="cls-4" cx="341.41" cy="149.48" r="2.29"/>
+        <circle class="cls-4" cx="590.15" cy="51.82" r="2.29"/>
+        <circle class="cls-4" cx="201.79" cy="263.17" r="2.29"/>
+        <circle class="cls-4" cx="67.5" cy="23.59" r="2.29"/>
+        <circle class="cls-4" cx="439.84" cy="527.68" r="2.29"/>
+        <circle class="cls-4" cx="243.75" cy="526.15" r="2.29"/>
+        <circle class="cls-4" cx="117.07" cy="333.18" r="2.29"/>
+        <circle class="cls-4" cx="316.24" cy="438.41" r="2.29"/>
+        <circle class="cls-4" cx="67.5" cy="536.07" r="2.29"/>
+        <circle class="cls-4" cx="455.86" cy="324.72" r="2.29"/>
+        <circle class="cls-4" cx="590.15" cy="564.3" r="2.29"/>
+    </g>
+    <g id="Lighthouse">
+        <g class="cls-5">
+            <g class="cls-6">
+                <path class="cls-7" d="M330,254.16a5,5,0,0,1,4.26,2.4,2.56,2.56,0,0,1,2.12-1.13,2.49,2.49,0,0,1,.67.09,5.23,5.23,0,0,1,10.35-.11,3.75,3.75,0,0,1,2.14-.67,3.85,3.85,0,0,1,3.81,3.7"/>
+            </g>
+        </g>
+        <rect class="cls-8" x="342.58" y="261.53" width="19.74" height="12.25"/>
+        <polygon class="cls-7" points="376.52 443.42 362.32 274.77 365 274.77 365 272.78 339.4 272.78 339.4 274.77 342.41 274.77 327.61 443.42 376.52 443.42"/>
+        <rect class="cls-8" x="340.3" y="259.91" width="23.8" height="1.99"/>
+        <rect class="cls-9" x="344.14" y="246.81" width="16.5" height="13.1"/>
+        <rect class="cls-7" x="344.14" y="245.36" width="16.5" height="1.45"/>
+        <path class="cls-8" d="M362.87,245.32l-9.46-8.65a1.66,1.66,0,0,0-.84-2.72v-6.13H352v6.11a1.64,1.64,0,0,0-1.42,1.64,1.66,1.66,0,0,0,.44,1.13l-9.09,8.62Z"/>
+        <polygon class="cls-8" points="365.1 308.03 363.58 289.96 340.89 289.96 339.3 308.03 365.1 308.03"/>
+        <polygon class="cls-8" points="367.97 341.45 366.45 323.37 338.02 323.37 336.43 341.45 367.97 341.45"/>
+        <path class="cls-10" d="M356.76,253.55a4.34,4.34,0,1,1-4.34-4.42,4.38,4.38,0,0,1,4.34,4.42"/>
+        <path class="cls-11" d="M356.35,253.55a3.93,3.93,0,1,1-3.93-4,4,4,0,0,1,3.93,4"/>
+        <path class="cls-12" d="M356,253.55a3.62,3.62,0,1,1-3.62-3.69,3.65,3.65,0,0,1,3.62,3.69"/>
+        <path class="cls-10" d="M354.2,253.55a1.78,1.78,0,1,1-1.78-1.81,1.8,1.8,0,0,1,1.78,1.81"/>
+        <path class="cls-11" d="M353.93,253.55a1.52,1.52,0,1,1-1.52-1.54,1.53,1.53,0,0,1,1.52,1.54"/>
+        <path class="cls-8" d="M362.32,254.92h-22v5h23.8v-5Zm-21.61.49h1.21v4h-1.21Zm1.62,0h1.41v4h-1.41Zm1.82,0h1.41v4h-1.41Zm1.82,0h1.41v4H346Zm1.82,0h1.41v4h-1.41Zm1.82,0H351v4h-1.41Zm1.82,0h1.41v4h-1.41Zm1.82,0h1.41v4h-1.41Zm1.82,0h1.41v4H355Zm1.82,0h1.41v4h-1.41Zm1.82,0h1.41v4h-1.41Zm1.82,0h1.41v4H360.5Zm3.2,4h-1.38v-4h1.38Z"/>
+        <g class="cls-13">
+            <g class="cls-14">
+                <path class="cls-15" d="M351.9,227.72v6.11a1.64,1.64,0,0,0-1.42,1.64,1.66,1.66,0,0,0,.44,1.13l-9.09,8.62H352.3v-17.5Z"/>
+                <path class="cls-15" d="M344.05,246.7v8.11h-3.84v7h2.28v10.88h-3.18v2h3L327.61,443.42H352.3V245.25h-8.25Zm-2.22,12.61h-1.21v-4h1.21Zm1.82,0h-1.41v-4h1.41Z"/>
+            </g>
+        </g>
+        <path class="cls-7" d="M341.7,267.07a1.93,1.93,0,0,1-1.11-1.09h-1.78a3.66,3.66,0,0,0,2.89,2.89Z"/>
+        <path class="cls-16" d="M413.35,367.37h-4.78a.18.18,0,0,1,0-.35h4.78a.18.18,0,0,1,0,.35"/>
+    </g>
+    <g id="Topwavysea">
+        <g class="cls-17">
+            <image width="576" height="576" transform="translate(-61.36 -42.71) scale(1.24)" xlink:href="lighthouse-blue.jpg"/>
+        </g>
+    </g>
+    <g id="MidWavySea">
+        <g class="cls-18">
+            <image width="576" height="576" transform="translate(-61.02 -73.88) scale(1.23)" xlink:href="lighthouse-turquoise.jpg"/>
+        </g>
+    </g>
+    <g id="BottomWavySea">
+        <g class="cls-19">
+            <image width="576" height="576" transform="translate(-63.66 -26.36) scale(1.24)" xlink:href="lighthouse-dark-blue.jpg"/>
+        </g>
+    </g>
+    <g id="BottomRightLight">
+        <g class="cls-20">
+            <polygon class="cls-21" points="352.92 253.57 779.62 345.93 779.62 436.79 352.92 253.57"/>
+        </g>
+    </g>
+    <g id="BottomLeftLight">
+        <g class="cls-20">
+            <polygon class="cls-22" points="353.16 253.57 -77.59 336.97 -77.59 425.69 353.16 253.57"/>
+        </g>
+    </g>
+    <g id="TopLeftLight">
+        <g class="cls-20">
+            <polygon class="cls-23" points="-77.08 -2.88 353.16 253.57 -77.08 137.73 -77.08 -2.88"/>
+        </g>
+    </g>
+    <g id="TopRightLight">
+        <g class="cls-20">
+            <polygon class="cls-24" points="778.93 0.05 352.92 253.57 778.93 139.4 778.93 0.05"/>
+        </g>
+    </g>
+</g>
+</svg>
