@@ -389,6 +389,8 @@ pre {
   .TeamMember--mat .TeamMember-bio  { background-image: url(../images/companies/mk.png); }
   .TeamMember--paul .TeamMember-bio { background-image: url(../images/companies/pf.png); }
   .TeamMember--pete .TeamMember-bio { background-image: url(../images/companies/pg.png); }
+  .TeamMember--natalie .TeamMember-bio { background-image: url(../images/companies/nh.png); }
+  .TeamMember--james .TeamMember-bio { background-image: url(../images/companies/jc.png); }
 
   .TeamMember--ed .TeamMember-bio::after,
   .TeamMember--becky .TeamMember-bio::after { background-color: #f05136; }
@@ -398,6 +400,8 @@ pre {
   .TeamMember--mat .TeamMember-bio::after  { background-color: #000; }
   .TeamMember--paul .TeamMember-bio::after { background-color: #818285; }
   .TeamMember--pete .TeamMember-bio::after { background-color: #f90; }
+  .TeamMember--natalie .TeamMember-bio::after { background-color: #fff; }
+  .TeamMember--james .TeamMember-bio::after { background-color: #000; }
 }
 
 .Team-quote {
