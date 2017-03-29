@@ -108,6 +108,12 @@ pre {
   padding-top: 3rem;
   position: relative;
 }
+@media (min-width: 40em) {
+  .Hero {
+    padding-bottom: 10rem;
+    padding-top: 10rem;
+  }
+}
 
 @keyframes Hero-bg {
   0%   { background: #ee3040; }
@@ -116,13 +122,6 @@ pre {
   60%  { background: #fac90d; }
   80%  { background: #0e8642; }
   100% { background: #58c4ea; }
-}
-
-@media (min-width: 40em) {
-  .Hero {
-    padding-bottom: 10rem;
-    padding-top: 10rem;
-  }
 }
 
 .Hero-body {
@@ -142,33 +141,21 @@ pre {
   }
 }
 
-.Hero-blockYellow {
-  background: #fac90d;
-  height: 50px;
-  left: 25%;
-  position: absolute;
-  top: 0;
-  width: 15px;
-}
-
-.Hero-blockBlue {
-  background: #58c4ea;
-  height: 15px;
-  right: 15%;
-  position: absolute;
-  bottom: 0;
-  width: 30px;
-}
-
 .Hero-ticker {
   padding-left: 3px;
   position: relative;
 }
 
 .Hero-tickerWord {
-  min-width: 200px;
+  min-width: 160px;
   opacity: 0;
   position: absolute;
+}
+
+@media (min-width: 40em) {
+  .Hero-tickerWord {
+    min-width: 250px;
+  }
 }
 
 .Hero-tickerLetter {
@@ -223,49 +210,6 @@ pre {
   }
 }
 
-.Intro-blocks {
-  left: 50%;
-  margin-left: -50px;
-  position: absolute;
-  top: 3rem;
-}
-
-.Intro-blockBlue {
-  background: #58c4ea;
-  height: 15px;
-  left: 15px;
-  position: absolute;
-  top: 0;
-  width: 50px;
-}
-
-.Intro-blockYellow {
-  background: #fac90d;
-  height: 50px;
-  left: 0px;
-  position: absolute;
-  top: 0;
-  width: 15px;
-}
-
-.Intro-blockRed {
-  background: #ee3040;
-  height: 15px;
-  left: 30px;
-  position: absolute;
-  top: 15px;
-  width: 80px;
-}
-
-.Intro-blockGreen {
-  background: #0e8642;
-  bottom: 0;
-  height: 15px;
-  position: absolute;
-  right: 10%;
-  width: 40px;
-}
-
 /* Team */
 
 .Team {
@@ -292,49 +236,6 @@ pre {
   overflow: hidden;
   position: relative;
   width: 100%;
-}
-
-.Team-blocks {
-  left: 50%;
-  margin-left: -50px;
-  position: absolute;
-  top: 3rem;
-}
-
-.Team-blockBlue {
-  background: #58c4ea;
-  height: 15px;
-  left: 15px;
-  position: absolute;
-  top: 0;
-  width: 50px;
-}
-
-.Team-blockYellow {
-  background: #fac90d;
-  bottom: 0;
-  height: 15px;
-  position: absolute;
-  right: 10%;
-  width: 40px;
-}
-
-.Team-blockRed {
-  background: #ee3040;
-  height: 50px;
-  left: 0px;
-  position: absolute;
-  top: 0;
-  width: 15px;
-}
-
-.Team-blockGreen {
-  background: #0e8642;
-  height: 15px;
-  left: 30px;
-  position: absolute;
-  top: 15px;
-  width: 80px;
 }
 
 .Team-members {
@@ -529,50 +430,6 @@ pre {
   }
 }
 
-.Companies-blocks {
-  left: 50%;
-  margin-left: -50px;
-  position: absolute;
-  top: 3rem;
-}
-
-.Companies-blockBlue {
-  background: #58c4ea;
-  height: 50px;
-  left: 0px;
-  position: absolute;
-  top: 0;
-  width: 15px;
-}
-
-.Companies-blockYellow {
-  background: #fac90d;
-  height: 15px;
-  left: 30px;
-  position: absolute;
-  top: 15px;
-  width: 80px;
-
-}
-
-.Companies-blockRed {
-  background: #ee3040;
-  bottom: 0;
-  height: 15px;
-  position: absolute;
-  right: 10%;
-  width: 40px;
-}
-
-.Companies-blockGreen {
-  background: #0e8642;
-  height: 15px;
-  left: 15px;
-  position: absolute;
-  top: 0;
-  width: 50px;
-}
-
 .Companies-items {
   display: flex;
   overflow-x: scroll;
@@ -703,49 +560,6 @@ pre {
   overflow: hidden;
   position: relative;
   width: 100%;
-}
-
-.Projects-blocks {
-  left: 50%;
-  margin-left: -50px;
-  position: absolute;
-  top: 3rem;
-}
-
-.Projects-blockBlue {
-  background: #58c4ea;
-  height: 15px;
-  left: 15px;
-  position: absolute;
-  top: 0;
-  width: 50px;
-}
-
-.Projects-blockYellow {
-  background: #fac90d;
-  height: 50px;
-  left: 0px;
-  position: absolute;
-  top: 0;
-  width: 15px;
-}
-
-.Projects-blockRed {
-  background: #ee3040;
-  height: 15px;
-  left: 30px;
-  position: absolute;
-  top: 15px;
-  width: 80px;
-}
-
-.Projects-blockGreen {
-  background: #0e8642;
-  bottom: 0;
-  height: 15px;
-  position: absolute;
-  right: 10%;
-  width: 40px;
 }
 
 .Projects-showcase {
@@ -1104,6 +918,22 @@ pre {
   position: relative;
 }
 
+/* Flourish */
+
+.Flourish {
+  height: 50px;
+  left: 50%;
+  margin-left: -50px;
+  position: absolute;
+  top: 3rem;
+  width: 100px;
+}
+
+.Flourish-block {
+  position: absolute;
+  z-index: 1;
+}
+
 /* Editorial */
 
 .Editorial {}
@@ -1183,4 +1013,17 @@ pre {
 .Editorial p:first-child {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+/* utility classes */
+
+.u-BackgroundFlourish {
+  position: relative;
+}
+
+.u-BackgroundFlourish::before,
+.u-BackgroundFlourish::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
 }
