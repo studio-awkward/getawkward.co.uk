@@ -414,21 +414,61 @@ pre {
 
 @media (min-width: 60em) {
   .TeamMember-detail {
+    align-items: flex-end;
     background-color: #fafaf8;
-    background-position: right top;
-    background-repeat: no-repeat;
-    background-size: 80px 80px;
     bottom: 0;
+    display: flex;
     opacity: 0;
-    padding-right: 100px;
+    overflow: hidden;
+    padding: 0;
     position: absolute;
     right: 1rem;
+    top: 0;
     transition: opacity 0.25s, visibility 0.25s;
     visibility: hidden;
     width: 33.3%;
   }
 
+  .TeamMember:hover .TeamMember-detail {
+    opacity: 1;
+    visibility: visible;
+  }
+
   .TeamMember-detail::after {
+    background: #1f5ba8;
+    content: "";
+    display: block;
+    height: 80px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+    z-index: 2;
+  }
+
+  .TeamMember-bio {
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    padding-left: 20px;
+    padding-right: 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .TeamMember-bio::before {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 500px;
+    position: absolute;
+    right: 80px;
+    top: -500px;
+    width: 80px;
+    z-index: 2;
+  }
+
+  .TeamMember-bio::after {
     bottom: 0;
     content: "";
     display: block;
@@ -438,28 +478,23 @@ pre {
     width: 80px;
   }
 
-  .TeamMember:hover .TeamMember-detail {
-    opacity: 1;
-    visibility: visible;
-  }
+  .TeamMember--ed .TeamMember-bio,
+  .TeamMember--becky .TeamMember-bio { background-image: url(../images/companies/optimistic-fox.png); }
+  .TeamMember--fran .TeamMember-bio,
+  .TeamMember--ruth .TeamMember-bio,
+  .TeamMember--sam .TeamMember-bio  { background-image: url(../images/companies/osomi.png); }
+  .TeamMember--mat .TeamMember-bio  { background-image: url(../images/companies/mk.png); }
+  .TeamMember--paul .TeamMember-bio { background-image: url(../images/companies/pf.png); }
+  .TeamMember--pete .TeamMember-bio { background-image: url(../images/companies/f90.png); }
 
-  .TeamMember--ed .TeamMember-detail,
-  .TeamMember--becky .TeamMember-detail { background-image: url(../images/companies/optimistic-fox.png); }
-  .TeamMember--fran .TeamMember-detail,
-  .TeamMember--ruth .TeamMember-detail,
-  .TeamMember--sam .TeamMember-detail  { background-image: url(../images/companies/osomi.png); }
-  .TeamMember--mat .TeamMember-detail  { background-image: url(../images/companies/mk.png); }
-  .TeamMember--paul .TeamMember-detail { background-image: url(../images/companies/pf.png); }
-  .TeamMember--pete .TeamMember-detail { background-image: url(../images/companies/f90.png); }
-
-  .TeamMember--ed .TeamMember-detail::after,
-  .TeamMember--becky .TeamMember-detail::after { background-color: #f05136; }
-  .TeamMember--fran .TeamMember-detail::after,
-  .TeamMember--ruth .TeamMember-detail::after,
-  .TeamMember--sam .TeamMember-detail::after  { background-color: #e8bb00; }
-  .TeamMember--mat .TeamMember-detail::after  { background-color: #000; }
-  .TeamMember--paul .TeamMember-detail::after { background-color: #818285; }
-  .TeamMember--pete .TeamMember-detail::after { background-color: #f90; }
+  .TeamMember--ed .TeamMember-bio::after,
+  .TeamMember--becky .TeamMember-bio::after { background-color: #f05136; }
+  .TeamMember--fran .TeamMember-bio::after,
+  .TeamMember--ruth .TeamMember-bio::after,
+  .TeamMember--sam .TeamMember-bio::after  { background-color: #e8bb00; }
+  .TeamMember--mat .TeamMember-bio::after  { background-color: #000; }
+  .TeamMember--paul .TeamMember-bio::after { background-color: #818285; }
+  .TeamMember--pete .TeamMember-bio::after { background-color: #f90; }
 }
 
 /* Companies */
