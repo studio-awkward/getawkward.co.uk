@@ -100,12 +100,22 @@ pre {
 
 .Hero {
   align-items: center;
+  animation: Hero-bg 15s linear infinite alternate both;
   background: #ee3040;
   display: flex;
   justify-content: center;
   padding-bottom: 3rem;
   padding-top: 3rem;
   position: relative;
+}
+
+@keyframes Hero-bg {
+  0%   { background: #ee3040; }
+  20%  { background: #f792bc; }
+  40%  { background: #f58200; }
+  60%  { background: #fac90d; }
+  80%  { background: #0e8642; }
+  100% { background: #58c4ea; }
 }
 
 @media (min-width: 40em) {
