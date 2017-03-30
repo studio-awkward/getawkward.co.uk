@@ -31,7 +31,7 @@
     initHeroTicker();
     initBackgroundFlourishes();
     initFlourishes();
-    initTeamShuffle();
+    initTeamSection();
   }
 
   function initWelcomeConsoleLog () {
@@ -49,9 +49,9 @@
         'line-height: 2em'
       ].join(' ')
 
-      for (var counter = 0; counter < logs.length; counter++) {
-        console.log('%c' + logs[counter], styles)
-      }
+      utils.forEach(logs, function (index, log) {
+        console.log('%c' + log, styles)
+      });
     }
   }
 
@@ -62,50 +62,53 @@
     var currentWordIndex = 0;
 
     words[currentWordIndex].style.opacity = 1;
-    for (var i = 0; i < words.length; i++) {
-      splitLetters(words[i]);
-    }
+    utils.forEach(words, function (index, word) {
+      splitLetters(word);
+    });
 
     function changeWord () {
       var currentWord = wordArray[currentWordIndex];
       var nextWord = currentWordIndex === words.length - 1 ? wordArray[0] : wordArray[currentWordIndex + 1];
-      for (var i = 0; i < currentWord.length; i++) {
-        animateLetterOut(currentWord, i);
-      }
+      utils.forEach(currentWord, function (index, letter) {
+        animateLetterOut(letter, index);
+      });
 
-      for (var i = 0; i < nextWord.length; i++) {
-        nextWord[i].className = 'Hero-tickerLetter is-behind';
+      utils.forEach(nextWord, function (index, letter) {
+        letter.classList.remove('is-in', 'is-out');
+        letter.classList.add('is-behind');
         nextWord[0].parentElement.style.opacity = 1;
-        animateLetterIn(nextWord, i);
-      }
+        animateLetterIn(letter, index);
+      });
 
       currentWordIndex = (currentWordIndex === wordArray.length - 1) ? 0 : currentWordIndex + 1;
       setTimeout(changeWord, 4000);
     }
 
-    function animateLetterOut (currentWord, i) {
+    function animateLetterOut (letter, index) {
       setTimeout(function() {
-    		currentWord[i].className = 'Hero-tickerLetter is-out';
-      }, i * 80);
+    		letter.classList.remove('is-in', 'is-behind');
+        letter.classList.add('is-out');
+      }, index * 80);
     }
 
-    function animateLetterIn (nextWord, i) {
+    function animateLetterIn (letter, index) {
       setTimeout(function() {
-    		nextWord[i].className = 'Hero-tickerLetter is-in';
-      }, 340 + (i * 80));
+    		letter.classList.remove('is-behind', 'is-out');
+    		letter.classList.add('is-in');
+      }, 340 + (index * 80));
     }
 
     function splitLetters (word) {
-      var content = word.innerHTML;
+      var content = word.textContent;
       word.textContent = '';
       var letters = [];
-      for (var i = 0; i < content.length; i++) {
+      utils.forEach(content, function (index) {
         var letter = document.createElement('span');
-        letter.className = 'Hero-tickerLetter';
-        letter.textContent = content.charAt(i);
+        letter.classList.add('Hero-tickerLetter');
+        letter.textContent = content.charAt(index);
         word.appendChild(letter);
         letters.push(letter);
-      }
+      });
 
       wordArray.push(letters);
     }
@@ -118,10 +121,10 @@
     document.body.appendChild(styleEl);
 
     var bgFlourishEls = document.querySelectorAll('.js-u-BackgroundFlourish');
-    for (var i = 0; i < bgFlourishEls.length; i++) {
-      addBgFlourish(bgFlourishEls[i], 'before');
-      addBgFlourish(bgFlourishEls[i], 'after');
-    }
+    utils.forEach(bgFlourishEls, function (index, bgFlourishEl) {
+      addBgFlourish(bgFlourishEl, 'before');
+      addBgFlourish(bgFlourishEl, 'after');
+    });
 
     function addBgFlourish (el, pseudo) {
       var className = el.getAttribute('class').split(' ')[0];
@@ -142,16 +145,16 @@
 
   function initFlourishes () {
     var flourishEls = document.querySelectorAll('.js-Flourish');
-    for (var i = 0; i < flourishEls.length; i++) {
-      addFlourish(flourishEls[i]);
-    }
+    utils.forEach(flourishEls, function (index, flourishEl) {
+      addFlourish(flourishEl);
+    });
 
     function addFlourish (el) {
       var flourishCount = utils.randomBetween(2, 4);
       for (var i = 0; i < flourishCount; i++) {
         flourish = createFlourishProps();
         var flourishEl = document.createElement('div');
-        flourishEl.className = 'Flourish-block';
+        flourishEl.classList.add('Flourish-block');
         flourishEl.style[flourish.verticalAlignment] = flourish.verticalPosition + '%';
         flourishEl.style[flourish.horizontalAlignment] = flourish.horizontalPosition + '%';
         flourishEl.style.width = flourish.width + 'px';
@@ -187,24 +190,61 @@
     return flourish;
   }
 
-  function initTeamShuffle () {
-    var teamMembers = document.querySelector('.js-Team-members');
-    for (var i = teamMembers.children.length; i >= 0; i--) {
-      teamMembers.appendChild(teamMembers.children[Math.random() * i | 0]);
+  function initTeamSection () {
+
+    shuffleTeam();
+    addQuotes();
+
+    function shuffleTeam () {
+      var teamMembers = document.querySelector('.js-Team-members');
+      for (var i = teamMembers.children.length; i >= 0; i--) {
+        teamMembers.appendChild(teamMembers.children[Math.random() * i | 0]);
+      }
     }
-    var teamQuotes = document.querySelectorAll('.js-Team-quote');
-    for (var i = 0; i < teamQuotes.length; i++) {
-      var quoteEl = teamQuotes[i];
-      var quoteIndex = utils.randomBetween(0, quotes.length);
-      var quote = quotes[quoteIndex];
 
-      var colourIndex = utils.pickRandomProperty(colours);
-      var colour = colours[colourIndex];
+    function addQuotes () {
+      var teamQuotes = document.querySelectorAll('.js-Team-quote');
+      utils.forEach(teamQuotes, function (index, teamQuote) {
+        var quoteIndex = utils.randomBetween(0, quotes.length);
+        var quote = quotes[quoteIndex];
 
-      quoteEl.className += ' is-visible';
-      quoteEl.style.background = colour;
-      quoteEl.querySelector('h4').textContent = quote.text;
-      quoteEl.querySelector('p').textContent = quote.person;
+        var colourIndex = utils.pickRandomProperty(colours);
+        var colour = colours[colourIndex];
+
+        teamQuote.classList.add('is-visible');
+        teamQuote.style.background = colour;
+        teamQuote.querySelector('h4').textContent = quote.text;
+        teamQuote.querySelector('p').textContent = quote.person;
+      });
+    }
+
+    var teamMembers = document.querySelectorAll('.js-TeamMember');
+    var activeTeamMemberTimeout;
+    highlightRandomTeamMember();
+
+    utils.forEach(teamMembers, function (index, teamMember) {
+      teamMember.addEventListener('mouseover', function () {
+        setTeamHighlight(index);
+      });
+      teamMember.addEventListener('mouseout', function () {
+        highlightRandomTeamMember();
+      });
+    });
+
+    function setTeamHighlight (index) {
+      clearTimeout(activeTeamMemberTimeout);
+      utils.forEach(teamMembers, function (index, teamMember) {
+        teamMember.classList.remove('is-active');
+      });
+      teamMembers[index].classList.add('is-active');
+    }
+
+    function highlightRandomTeamMember () {
+      activeTeamMemberTimeout = setTimeout(function () {
+        var index = utils.randomBetween(0, teamMembers.length);
+        setTeamHighlight(index);
+        highlightRandomTeamMember();
+      }, 3000);
     }
   }
 
@@ -212,6 +252,8 @@
     randomBetween: function (min, max) {
       return Math.floor(Math.random() * max) + min;
     },
+
+    // http://stackoverflow.com/a/2532251
     pickRandomProperty: function(obj) {
       var result;
       var count = 0;
@@ -221,6 +263,13 @@
         }
       }
       return result;
+    },
+
+    // https://toddmotto.com/ditch-the-array-foreach-call-nodelist-hack/
+    forEach: function (array, callback, scope) {
+      for (var i = 0; i < array.length; i++) {
+        callback.call(scope, i, array[i]);
+      }
     }
   };
 

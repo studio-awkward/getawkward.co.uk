@@ -307,7 +307,7 @@ pre {
   width: 100%;
 }
 
-.TeamMember:hover .TeamMember-portrait {
+.TeamMember.is-active .TeamMember-portrait {
   opacity: 1;
 }
 
@@ -332,7 +332,7 @@ pre {
     width: 33.3%;
   }
 
-  .TeamMember:hover .TeamMember-detail {
+  .TeamMember.is-active .TeamMember-detail {
     opacity: 1;
     visibility: visible;
   }
