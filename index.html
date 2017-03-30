@@ -498,7 +498,7 @@
               Brighton, BN1 1AL
             </address>
           </div>
-          <form class="Contact-form" method="post" action="/contact/">
+          <form class="Contact-form js-Contact-form" method="post" action="contact/">
             <fieldset class="Contact-fieldset">
               <legend class="Contact-legend">Say hello</legend>
               <label class="Contact-label u-visuallyHidden" for="name">name</label>
@@ -509,7 +509,21 @@
               <input class="Contact-input Contact-input--phone" id="phone" name="phone" placeholder="phone">
               <label class="Contact-label u-visuallyHidden" for="message">say some stuff to us</label>
               <textarea class="Contact-textarea" id="message" name="message" rows="3" cols="20" placeholder="say some stuff to us"></textarea>
-              <button class="Contact-submit" type="submit">send message</button>
+              <button class="Contact-submit" type="submit">
+                Send message
+                <span class="Contact-states">
+                  <span class="Contact-state Contact-state--loading js-Contact-state--loading">
+                    &#8635;
+                  </span>
+                  <span class="Contact-state Contact-state--success js-Contact-state--success">
+                    &#10004;
+                  </span>
+                  <span class="Contact-state Contact-state--error js-Contact-state--error">
+                    &#10004;
+                  </span>
+                </span>
+              </button>
+
             </fieldset>
           </form>
         </div>

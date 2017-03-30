@@ -32,6 +32,7 @@
     initBackgroundFlourishes();
     initFlourishes();
     initTeamSection();
+    initContactForm();
   }
 
   function initWelcomeConsoleLog () {
@@ -248,6 +249,71 @@
         setTeamHighlight(index);
         highlightRandomTeamMember();
       }, 3000);
+    }
+  }
+
+  function initContactForm () {
+    var form = document.querySelector('.js-Contact-form');
+    form.addEventListener('submit', onFormSubmit);
+
+    function onFormSubmit (e) {
+      e.preventDefault();
+
+      var loadingState = document.querySelector('.js-Contact-state--loading');
+      var successState = document.querySelector('.js-Contact-state--success');
+      var errorState = document.querySelector('.js-Contact-state--error');
+
+      var name = document.getElementById('name');
+      var email = document.getElementById('email');
+      var phone = document.getElementById('phone');
+      var message = document.getElementById('message');
+
+      var data = {
+        'name': name.value,
+        'email': email.value,
+        'phone': phone.value,
+        'message': message.value
+      };
+
+      var xhr = new XMLHttpRequest();
+      xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      xhr.send(JSON.stringify(data));
+
+      loadingState.classList.add('is-active');
+
+      xhr.onerror = showError;
+      xhr.onload = function () {
+        loadingState.classList.remove('is-active');
+        if (xhr.status >= 200 && xhr.status < 400) {
+          setTimeout(function () {
+            successState.classList.add('is-active');
+          }, 300);
+
+          setTimeout(function () {
+            name.value = '';
+            email.value = '';
+            phone.value = '';
+            message.value = '';
+            successState.classList.remove('is-active');
+          }, 3000);
+        } else {
+          showError();
+        }
+      };
+
+      function showError () {
+        loadingState.classList.remove('is-active');
+        console.log(xhr.responseText);
+
+        setTimeout(function () {
+          errorState.classList.add('is-active');
+        }, 300);
+
+        setTimeout(function () {
+          errorState.classList.remove('is-active');
+        }, 3000);
+      };
     }
   }
 
