@@ -44,13 +44,16 @@
 
       var styles = [
         'background: #eee;',
-        'color: #ee3040;',
+        'color: [colour];',
         'padding: 5px;',
         'line-height: 2em'
       ].join(' ')
 
       utils.forEach(logs, function (index, log) {
-        console.log('%c' + log, styles)
+        var colourIndex = utils.pickRandomProperty(colours);
+        var colour = colours[colourIndex];
+        var style = styles.slice(0).replace('[colour]', colour);
+        console.log('%c' + log, style)
       });
     }
   }
