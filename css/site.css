@@ -31,8 +31,8 @@
  * Font-sizes
  * - h1: 2.4rem / 3.6rem
  * - h2: 1.8rem / 2.4rem
- * - h3: 1.2rem
- * - p: 0.875rem
+ * - h3: 1.125rem (18px)
+ * - p: 0.875rem (14px)
  *
  * Font weights
  * - Heading: 700
@@ -427,8 +427,10 @@ pre {
     background: #f90;
     color: #fff;
     flex: 1 0 25%;
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.125rem;
+    font-style: italic;
+    font-weight: 400;
     padding: 1rem;
     position: relative;
   }
@@ -842,7 +844,7 @@ pre {
 .Contact-email {
   color: #ee3040;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   text-decoration: none;
@@ -1082,7 +1084,7 @@ pre {
 }
 
 .Editorial h3 {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin: 0;
 }
@@ -1094,7 +1096,10 @@ pre {
 }
 
 .Editorial blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.125rem;
   font-style: italic;
+  font-weight: 400;
   margin: 2rem 0;
   padding-left: 1.5rem;
   position: relative;
