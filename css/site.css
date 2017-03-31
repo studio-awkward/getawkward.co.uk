@@ -32,6 +32,7 @@
  * - h1: 2.4rem / 3.6rem
  * - h2: 1.8rem / 2.4rem
  * - h3: 1.2rem
+ * - p: 0.875rem
  *
  * Font weights
  * - Heading: 700
@@ -1105,11 +1106,12 @@ pre {
 }
 
 .Editorial p {
+  font-size: 0.875rem; /* 14/16 */
   margin: 1rem 0;
 }
 
 .Editorial p:first-child {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
