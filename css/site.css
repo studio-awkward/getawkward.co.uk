@@ -106,14 +106,15 @@ pre {
   background: #ee3040;
   display: flex;
   justify-content: center;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
   position: relative;
 }
+
 @media (min-width: 40em) {
   .Hero {
-    padding-bottom: 10rem;
-    padding-top: 10rem;
+    padding-bottom: 14rem;
+    padding-top: 14rem;
   }
 }
 
@@ -189,31 +190,31 @@ pre {
   background: #fff;
   display: flex;
   justify-content: center;
-  padding-bottom: 3rem;
-  padding-top: 7rem;
+  padding-bottom: 4rem;
+  padding-top: 9rem;
   position: relative;
 }
 
 @media (min-width: 40em) {
   .Intro {
-    padding-bottom: 10rem;
-    padding-top: 10rem;
+    padding-bottom: 14rem;
+    padding-top: 14rem;
   }
 }
 
 .Intro-body {
-  max-width: 80%;
+  max-width: 70%;
 }
 
 @media (min-width: 40em) {
   .Intro-body {
-    max-width: 60%;
+    max-width: 50%;
   }
 }
 
 @media (min-width: 60em) {
   .Intro-body {
-    max-width: 50%;
+    max-width: 40%;
   }
 }
 
@@ -223,12 +224,16 @@ pre {
   }
 }
 
-.Intro-body p:nth-child(1) {
+.Intro-standFirst {
+  font-size: 1.3125rem;
+  font-weight: 400;
+  margin: 1rem 0 2rem 0;
   transform: rotate(-1.5deg);
 }
 
-.Intro-body p:nth-child(2) {
-  transform: rotate(1deg);
+.Intro-detail {
+  font-size: 1rem;
+  transform: rotate(1.5deg);
 }
 
 /* Team */
@@ -238,22 +243,19 @@ pre {
   background: #fff3e9;
   display: flex;
   justify-content: center;
-  padding-bottom: 1rem;
-  padding-top: 7rem;
+  padding-bottom: 2rem;
+  padding-top: 9rem;
   position: relative;
 }
 
 @media (min-width: 40em) {
   .Team {
-    padding-bottom: 5rem;
-    padding-top: 10rem;
+    padding-bottom: 12rem;
+    padding-top: 18rem;
   }
 }
 
 .Team-body {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80em;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -275,7 +277,7 @@ pre {
 
 @media (min-width: 60em) {
   .Team-members {
-    padding: 0 1rem;
+    padding: 0 6rem;
     position: static;
     width: 66.6%;
   }
@@ -346,7 +348,7 @@ pre {
     overflow: hidden;
     padding: 0;
     position: absolute;
-    right: 1rem;
+    right: 6rem;
     top: 0;
     transition: opacity 0.25s, visibility 0.25s;
     visibility: hidden;
@@ -433,19 +435,20 @@ pre {
 
 @media (min-width: 60em) {
   .Team-quote {
+    align-items: center;
     background: #f90;
     color: #fff;
     flex: 1 0 25%;
     font-family: 'Playfair Display', serif;
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     font-style: italic;
     font-weight: 400;
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem;
     position: relative;
   }
 
   .Team-quote.is-visible {
-    display: block;
+    display: flex;
   }
 
   .Team-quote::before {
@@ -466,6 +469,12 @@ pre {
   }
 }
 
+@media (min-width: 80em) {
+  .Team-quote {
+    font-size: 1.125rem;
+  }
+}
+
 /* Companies */
 
 .Companies {
@@ -473,15 +482,15 @@ pre {
   background: #fff;
   display: flex;
   justify-content: center;
-  padding-bottom: 1rem;
-  padding-top: 7rem;
+  padding-bottom: 3rem;
+  padding-top: 9rem;
   position: relative;
 }
 
 @media (min-width: 40em) {
   .Companies {
-    padding-bottom: 3rem;
-    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-top: 14rem;
   }
 }
 
@@ -568,6 +577,7 @@ pre {
     flex-direction: column;
   }
 
+  .Company--nh { margin-top: -150px;}
   .Company--osomi { margin-top: -250px;}
   .Company--jc { margin-top: -150px;}
 }
@@ -600,14 +610,15 @@ pre {
   background: #f2fafe;
   display: flex;
   justify-content: center;
-  padding-bottom: 1rem;
-  padding-top: 7rem;
+  padding-bottom: 3rem;
+  padding-top: 9rem;
   position: relative;
 }
 
 @media (min-width: 40em) {
   .Projects {
-    padding-top: 10rem;
+    padding-bottom: 6rem;
+    padding-top: 16rem;
   }
 }
 
@@ -622,8 +633,15 @@ pre {
 
 .Projects-showcase {
   margin-bottom: 2rem;
-  padding: 0 1rem;
+  padding: 0 3rem;
   text-align: center;
+}
+
+@media (min-width: 40em) {
+  .Projects-showcase {
+    margin-bottom: 0;
+    padding: 0 1rem;
+  }
 }
 
 .Projects-showcaseVisual {
@@ -638,7 +656,6 @@ pre {
 }
 
 .Projects-showcaseImage {
-  border-radius: 50%;
   height: 300px;
   overflow: hidden;
   width: 300px;
@@ -652,7 +669,7 @@ pre {
   .Projects-showcaseDetail {
     display: inline-block;
     max-width: 50%;
-    padding: 2rem;
+    padding: 1rem 4rem;
     vertical-align: middle;
   }
 }
@@ -660,16 +677,24 @@ pre {
 @media (min-width: 40em) {
   .Projects-items {
     display: flex;
+    padding: 0rem 4rem;
+  }
+}
+
+@media (min-width: 40em) {
+  .Projects-items {
+    padding: 1rem 8rem;
   }
 }
 
 .Projects-item {
-  padding: 1rem;
+  padding: 1rem 3rem;
 }
 
 @media (min-width: 40em) {
   .Projects-item {
     flex: 1 0 33.3%;
+    padding: 1rem;
   }
 
   .Projects-item:nth-child(1) {
@@ -777,30 +802,35 @@ pre {
   }
 
   .Gallery-item {
-    animation: Gallery-left 25s linear infinite;
+    animation: Gallery-left 1s linear infinite;
     position: absolute;
   }
 
-  .Gallery-item--001 { background: #ee3040; top:  0%; width: 25%; animation-duration: 45s; animation-delay: -10s; }
-  .Gallery-item--002 { background: #fac90d; top:  5%; width: 20%; animation-duration: 37s; animation-delay: -20s; }
-  .Gallery-item--003 { background: #f58200; top: 15%; width: 20%; animation-duration: 50s; animation-delay: -30s; }
-  .Gallery-item--004 { background: #0e8642; top: 25%; width: 25%; animation-duration: 33s; animation-delay: -10s; }
-  .Gallery-item--005 { background: #1f5ba8; top: 35%; width: 20%; animation-duration: 41s; animation-delay: -20s; }
-  .Gallery-item--006 { background: #58c4ea; top: 45%; width: 20%; animation-duration: 47s; animation-delay: -30s; }
-  .Gallery-item--007 { background: #f792bc; top: 55%; width: 30%; animation-duration: 42s; animation-delay: -10s; }
-  .Gallery-item--008 { background: #ee3040; top: 65%; width: 25%; animation-duration: 35s; animation-delay: -20s; }
-  .Gallery-item--009 { background: #fac90d; top: 75%; width: 20%; animation-duration: 42s; animation-delay: -30s; }
-  .Gallery-item--010 { background: #f58200; top: 85%; width: 20%; animation-duration: 56s; animation-delay: -20s; }
+  .Gallery-item--001 { background: #ee3040; left:  50%; width: 25%; animation-name: Gallery-top; animation-duration: 450s; animation-delay: -100s; }
+  .Gallery-item--002 { background: #fac90d; top:  5%; width: 20%; animation-duration: 370s; animation-delay: -200s; }
+  .Gallery-item--003 { background: #f58200; left: 75%; width: 20%; animation-name: Gallery-top; animation-duration: 500s; animation-delay: -300s; }
+  .Gallery-item--004 { background: #0e8642; top: 25%; width: 25%; animation-duration: 130s; animation-delay: -30s; }
+  .Gallery-item--005 { background: #1f5ba8; top: 35%; width: 20%; animation-duration: 410s; animation-delay: -400s; }
+  .Gallery-item--006 { background: #58c4ea; top: 45%; width: 20%; animation-duration: 470s; animation-delay: -400s; }
+  .Gallery-item--007 { background: #f792bc; top: 55%; width: 30%; animation-duration: 420s; animation-delay: -100s; }
+  .Gallery-item--008 { background: #ee3040; left: 25%; width: 25%; animation-name: Gallery-top; animation-duration: 150s; animation-delay: -70s; }
+  .Gallery-item--009 { background: #fac90d; top: 75%; width: 20%; animation-duration: 420s; animation-delay: -300s; }
+  .Gallery-item--010 { background: #f58200; top: 85%; width: 20%; animation-duration: 560s; animation-delay: -200s; }
 
   .Gallery-image {
-    filter: contrast(200%);
-    mix-blend-mode: screen;
+    filter: contrast(100%);
+    mix-blend-mode: multiply;
   }
 }
 
 @keyframes Gallery-left {
   from { left: -50%; }
   to   { left: 100%; }
+}
+
+@keyframes Gallery-top {
+  from { top: -50%; }
+  to   { top: 100%; }
 }
 
 /* Contact */
@@ -1054,6 +1084,13 @@ pre {
   position: absolute;
   top: 3rem;
   width: 100px;
+  border: 1px dashed #f90;
+}
+
+@media (min-width: 60em) {
+  .Flourish {
+    top: 6rem;
+  }
 }
 
 .Flourish-block {
@@ -1079,7 +1116,7 @@ pre {
 }
 
 .Editorial h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 1;
   margin: 1rem 0;
@@ -1142,7 +1179,7 @@ pre {
 }
 
 .Editorial p:first-child {
-  font-size: 1rem;
+  font-size: 1.3125rem;
   font-weight: 400;
 }
 

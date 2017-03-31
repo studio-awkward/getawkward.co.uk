@@ -17,55 +17,43 @@
 
   var quotes = [
     {
-      text: 'I hate that line height, it\'s gross.',
+      text: '"I hate that line height, it\'s gross."',
       person: 'Ruth',
     },
     {
-      text: 'I love seeing if words make me feel sick',
+      text: '"I love seeing if words make me feel sick"',
       person: 'Ruth',
     },
     {
-      text: 'If you wanna get high on sharpies go for the pink',
+      text: '"If you wanna get high on sharpies go for the pink"',
       person: 'Ruth',
     },
     {
-      text: 'Can we hyphenate the channel name so my ocd doesn\'t lead to violence. Please?',
-      person: 'Pete',
-    },
-    {
-      text: 'Go on then, smash out the hyphen',
+      text: '"Go on then, smash out the hyphen"',
       person: 'Bex',
     },
     {
-      text: 'Look, I\'m just going to hate it, so don\'t even bother showing it to me.',
+      text: '"You can\'t buy fairy lights in February"',
+      person: 'Ed',
+    },
+    {
+      text: '"Clicked my own face there."',
+      person: 'Ed',
+    },
+    {
+      text: '"I\'m not a pedant but I like to point out what\'s right"',
+      person: 'Ed',
+    },
+    {
+      text: '"My tweets are quite funny"',
+      person: 'Ed',
+    },
+    {
+      text: '"I\'ve got a funny face & it hurts sometimes"',
       person: 'Ruth',
     },
     {
-      text: 'You can\'t buy fairy lights in February',
-      person: 'Ed',
-    },
-    {
-      text: 'Clicked my own face there.',
-      person: 'Ed',
-    },
-    {
-      text: 'I\'m not a pedant but I like to point out what\'s right',
-      person: 'Ed',
-    },
-    {
-      text: 'My tweets are quite funny',
-      person: 'Ed',
-    },
-    {
-      text: 'I\'ve got a funny face & it hurts sometimes',
-      person: 'Ruth',
-    },
-    {
-      text: 'I\'ve realised I\'m a really slow runner. I can\'t even catch children.',
-      person: 'Ruth',
-    },
-    {
-      text: 'It\'s [the office printer] such a shitty little bitch',
+      text: '"It\'s [the office printer] such a shitty little bitch"',
       person: 'Ruth'
     }
   ];
