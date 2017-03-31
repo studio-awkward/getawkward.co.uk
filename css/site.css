@@ -470,7 +470,7 @@ pre {
 
 .Companies {
   align-items: center;
-  background: #fafaf8;
+  background: #fff;
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
@@ -758,7 +758,7 @@ pre {
 /* Gallery */
 
 .Gallery {
-  background: #fafaf8;
+  background: #fff;
   display: none;
 }
 
