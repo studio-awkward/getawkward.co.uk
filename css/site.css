@@ -185,7 +185,7 @@ pre {
 
 .Intro {
   align-items: center;
-  background: #fafaf8;
+  background: #fff;
   display: flex;
   justify-content: center;
   padding-bottom: 3rem;
@@ -213,6 +213,12 @@ pre {
 @media (min-width: 60em) {
   .Intro-body {
     max-width: 50%;
+  }
+}
+
+@media (min-width: 80em) {
+  .Intro-body {
+    max-width: 30%;
   }
 }
 
