@@ -373,8 +373,9 @@ pre {
     background-position: right top;
     background-repeat: no-repeat;
     background-size: 80px 80px;
-    padding-left: 20px;
-    padding-right: 100px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 110px;
     position: relative;
     z-index: 1;
   }
