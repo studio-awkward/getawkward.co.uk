@@ -201,13 +201,26 @@ pre {
 
 .Intro-body {
   max-width: 80%;
-  transform: rotate(-1.5deg);
 }
 
 @media (min-width: 40em) {
   .Intro-body {
     max-width: 60%;
   }
+}
+
+@media (min-width: 60em) {
+  .Intro-body {
+    max-width: 50%;
+  }
+}
+
+.Intro-body p:nth-child(1) {
+  transform: rotate(-1.5deg);
+}
+
+.Intro-body p:nth-child(2) {
+  transform: rotate(1deg);
 }
 
 /* Team */
