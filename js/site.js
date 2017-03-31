@@ -29,7 +29,7 @@
       person: 'Ruth',
     },
     {
-      text: 'Can we... Can we hyphenate the channel name so my ocd doesn\'t lead to violence. Please?',
+      text: 'Can we hyphenate the channel name so my ocd doesn\'t lead to violence. Please?',
       person: 'Pete',
     },
     {
