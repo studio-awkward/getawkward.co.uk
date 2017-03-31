@@ -15,6 +15,7 @@
  * - Grey - light: #fafaf8
  * - Grey - mid: #999;
  * - Grey - dark: #666;
+ * - Salmon: #fff3e9;
  * - Red: #ee3040
  * - Pink: #f792bc
  * - Orange: #f58200
@@ -234,7 +235,7 @@ pre {
 
 .Team {
   align-items: center;
-  background: #fff;
+  background: #fff3e9;
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
@@ -376,12 +377,13 @@ pre {
     padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 110px;
+    padding-top: 30px;
     position: relative;
     z-index: 1;
   }
 
   .TeamMember-bio::before {
-    background: #fff;
+    background: #fff3e9;
     content: "";
     display: block;
     height: 500px;
