@@ -423,7 +423,7 @@ pre {
   .TeamMember--mat .TeamMember-bio::after  { background-color: #000; }
   .TeamMember--paul .TeamMember-bio::after { background-color: #818285; }
   .TeamMember--pete .TeamMember-bio::after { background-color: #f90; }
-  .TeamMember--natalie .TeamMember-bio::after { background-color: #fff; }
+  .TeamMember--natalie .TeamMember-bio::after { background-color: #a0bcbf; }
   .TeamMember--james .TeamMember-bio::after { background-color: #000; }
 }
 
