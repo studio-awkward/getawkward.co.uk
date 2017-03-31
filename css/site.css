@@ -909,12 +909,17 @@ pre {
   width: 100%;
 }
 
-.Contact-input::-webkit-input-placeholder { color: #fafaf8; }
-.Contact-input::-moz-placeholder { color: #fafaf8; }
-.Contact-input::placeholder { color: #fafaf8; }
-.Contact-textarea::-webkit-input-placeholder { color: #fafaf8; }
-.Contact-textarea::-moz-placeholder { color: #fafaf8; }
-.Contact-textarea::placeholder { color: #fafaf8; }
+.Contact-input:focus,
+.Contact-textarea:focus {
+  outline: none;
+}
+
+.Contact-input::-webkit-input-placeholder { color: #ddd; }
+.Contact-input::-moz-placeholder { color: #ddd; }
+.Contact-input::placeholder { color: #ddd; }
+.Contact-textarea::-webkit-input-placeholder { color: #ddd; }
+.Contact-textarea::-moz-placeholder { color: #ddd; }
+.Contact-textarea::placeholder { color: #ddd; }
 
 .Contact-input--name { background: #ee3040; }
 .Contact-input--email { background: #f58200; left: 35px; }
@@ -934,6 +939,10 @@ pre {
   -webkit-appearance: none;
 }
 
+.Contact-submit:focus {
+  outline: none;
+}
+
 .Contact-submit::before {
   background: #fac90d;
   content: "";
@@ -942,7 +951,12 @@ pre {
   left: 0;
   position: absolute;
   top: 5px;
+  transition: background 0.25s;
   width: 30px;
+}
+
+.Contact-submit:focus::before {
+  background: #ee3040;
 }
 
 .Contact-states {
