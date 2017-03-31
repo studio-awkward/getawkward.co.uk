@@ -50,9 +50,12 @@
         'line-height: 2em'
       ].join(' ')
 
+      var logColours = utils.cloneObject(colours);
+
       utils.forEach(logs, function (index, log) {
-        var colourIndex = utils.pickRandomProperty(colours);
-        var colour = colours[colourIndex];
+        var colourIndex = utils.pickRandomProperty(logColours);
+        var colour = logColours[colourIndex];
+        delete logColours[colourIndex];
         var style = styles.slice(0).replace('[colour]', colour);
         console.log('%c' + log, style)
       });
@@ -124,13 +127,24 @@
     var styleEl = document.createElement('style');
     document.body.appendChild(styleEl);
 
+
     var bgFlourishEls = document.querySelectorAll('.js-u-BackgroundFlourish');
     utils.forEach(bgFlourishEls, function (index, bgFlourishEl) {
-      addBgFlourish(bgFlourishEl, 'before');
-      addBgFlourish(bgFlourishEl, 'after');
+      var bgFlourishColours = utils.cloneObject(colours);
+
+      var beforeColourIndex = utils.pickRandomProperty(bgFlourishColours);
+      var beforeColour = bgFlourishColours[beforeColourIndex];
+      delete bgFlourishColours[beforeColourIndex];
+
+      var afterColourIndex = utils.pickRandomProperty(bgFlourishColours);
+      var afterColour = bgFlourishColours[afterColourIndex];
+      delete bgFlourishColours[afterColourIndex];
+
+      addBgFlourish(bgFlourishEl, 'before', beforeColour);
+      addBgFlourish(bgFlourishEl, 'after', afterColour);
     });
 
-    function addBgFlourish (el, pseudo) {
+    function addBgFlourish (el, pseudo, colour) {
       var className = el.getAttribute('class').split(' ')[0];
 
       var flourish = createFlourishProps();
@@ -140,7 +154,7 @@
       style += 'height: ' + flourish.height + 'px; ';
       style += flourish.verticalAlignment + ': ' + flourish.verticalPosition + '%; ';
       style += flourish.horizontalAlignment + ': ' + flourish.horizontalPosition + '%; ';
-      style += 'background: ' + flourish.colour + '; ';
+      style += 'background: ' + colour + '; ';
       style += '}';
 
       styleEl.textContent += style;
@@ -154,8 +168,13 @@
     });
 
     function addFlourish (el) {
+      var flourishColours = utils.cloneObject(colours);
       var flourishCount = utils.randomBetween(2, 4);
       for (var i = 0; i < flourishCount; i++) {
+        var colourIndex = utils.pickRandomProperty(flourishColours);
+        var colour = flourishColours[colourIndex];
+        delete flourishColours[colourIndex];
+
         flourish = createFlourishProps();
         var flourishEl = document.createElement('div');
         flourishEl.classList.add('Flourish-block');
@@ -163,7 +182,7 @@
         flourishEl.style[flourish.horizontalAlignment] = flourish.horizontalPosition + '%';
         flourishEl.style.width = flourish.width + 'px';
         flourishEl.style.height = flourish.height + 'px';
-        flourishEl.style.background = flourish.colour;
+        flourishEl.style.background = colour;
         el.appendChild(flourishEl);
       }
     }
@@ -188,9 +207,6 @@
       flourish.verticalPosition = utils.randomBetween(0, 90);
       flourish.horizontalPosition = 0;
     }
-
-    var colourIndex = utils.pickRandomProperty(colours);
-    flourish.colour = colours[colourIndex];
     return flourish;
   }
 
@@ -208,12 +224,14 @@
 
     function addQuotes () {
       var teamQuotes = document.querySelectorAll('.js-Team-quote');
+      var quoteColours = utils.cloneObject(colours);
       utils.forEach(teamQuotes, function (index, teamQuote) {
         var quoteIndex = utils.randomBetween(0, quotes.length);
         var quote = quotes[quoteIndex];
 
-        var colourIndex = utils.pickRandomProperty(colours);
-        var colour = colours[colourIndex];
+        var colourIndex = utils.pickRandomProperty(quoteColours);
+        var colour = quoteColours[colourIndex];
+        delete quoteColours[colourIndex];
 
         teamQuote.classList.add('is-visible');
         teamQuote.style.background = colour;
@@ -320,6 +338,10 @@
   var utils = {
     randomBetween: function (min, max) {
       return Math.floor(Math.random() * max) + min;
+    },
+
+    cloneObject: function (obj) {
+      return JSON.parse(JSON.stringify(obj));
     },
 
     // http://stackoverflow.com/a/2532251
