@@ -574,9 +574,11 @@ pre {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all 0.25s;
 }
 
 .Company-link:hover {
+  color: #f792bc;
   text-decoration: underline;
 }
 
@@ -711,14 +713,17 @@ pre {
   color: #ee3040;
   display: block;
   font-weight: 700;
+  font-size: 0.875rem;
   margin: 1rem 0;
   padding-left: 40px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all 0.25s;
 }
 
 .Projects-link:hover {
+  color: #f792bc;
   text-decoration: underline;
 }
 
@@ -730,7 +735,13 @@ pre {
   left: 0;
   position: absolute;
   top: 5px;
+  transition: all 0.25s;
   width: 30px;
+}
+
+.Projects-link:hover::before {
+  background: #58c4ea;
+  left: 3px;
 }
 
 /* Gallery */
@@ -932,15 +943,19 @@ pre {
   border: 0;
   color: #ee3040;
   cursor: pointer;
+  font-size: 0.875rem;
   font-weight: 700;
   margin-top: 10px;
   padding-left: 40px;
   position: relative;
   text-transform: uppercase;
+  transition: all 0.25s;
   -webkit-appearance: none;
 }
 
+.Contact-submit:hover,
 .Contact-submit:focus {
+  color: #f792bc;
   outline: none;
 }
 
@@ -952,12 +967,14 @@ pre {
   left: 0;
   position: absolute;
   top: 5px;
-  transition: background 0.25s;
+  transition: all 0.25s;
   width: 30px;
 }
 
-.Contact-submit:focus::before {
-  background: #ee3040;
+.Contact-submit:focus::before,
+.Contact-submit:hover::before {
+  background: #58c4ea;
+  left: 3px;
 }
 
 .Contact-states {
