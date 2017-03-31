@@ -1085,18 +1085,18 @@ pre {
 /* Flourish */
 
 .Flourish {
-  height: 50px;
+  border: 1px dashed #f58200;
+  height: 100px;
   left: 50%;
   margin-left: -50px;
   position: absolute;
-  top: 3rem;
+  top: 2rem;
   width: 100px;
-  border: 1px dashed #f90;
 }
 
 @media (min-width: 60em) {
   .Flourish {
-    top: 6rem;
+    top: 5rem;
   }
 }
 
