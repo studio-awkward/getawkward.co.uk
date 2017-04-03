@@ -240,7 +240,7 @@ pre {
 
 .Team {
   align-items: center;
-  background: #fff3e9;
+  background: #f2efec;
   display: flex;
   justify-content: center;
   padding-bottom: 2rem;
@@ -385,7 +385,7 @@ pre {
   }
 
   .TeamMember-bio::before {
-    background: #fff3e9;
+    background: #f2efec;
     content: "";
     display: block;
     height: 500px;
@@ -607,7 +607,7 @@ pre {
 
 .Projects {
   align-items: center;
-  background: #f2fafe;
+  background: #f2efec;
   display: flex;
   justify-content: center;
   padding-bottom: 3rem;
