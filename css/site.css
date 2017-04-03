@@ -418,15 +418,15 @@ pre {
   .TeamMember--james .TeamMember-bio { background-image: url(../images/companies/jc.png); }
 
   .TeamMember--ed .TeamMember-bio::after,
-  .TeamMember--becky .TeamMember-bio::after { background-color: #f05136; }
+  .TeamMember--becky .TeamMember-bio::after { background-color: #ed4329; }
   .TeamMember--fran .TeamMember-bio::after,
   .TeamMember--ruth .TeamMember-bio::after,
-  .TeamMember--sam .TeamMember-bio::after  { background-color: #e8bb00; }
+  .TeamMember--sam .TeamMember-bio::after  { background-color: #e7ba00; }
   .TeamMember--mat .TeamMember-bio::after  { background-color: #000; }
   .TeamMember--paul .TeamMember-bio::after { background-color: #818285; }
   .TeamMember--pete .TeamMember-bio::after { background-color: #f90; }
-  .TeamMember--natalie .TeamMember-bio::after { background-color: #a0bcbf; }
-  .TeamMember--james .TeamMember-bio::after { background-color: #000; }
+  .TeamMember--natalie .TeamMember-bio::after { background-color: #a0bcba; }
+  .TeamMember--james .TeamMember-bio::after { background-color: #161516; }
 }
 
 .Team-quote {
