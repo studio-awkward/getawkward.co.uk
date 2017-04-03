@@ -502,7 +502,7 @@ pre {
 
 @media (min-width: 40em) {
   .Companies-body {
-    overflow: auto;
+    overflow: initial;
   }
 }
 
@@ -532,7 +532,6 @@ pre {
 }
 
 .Companies-itemDouble {
-  display: flex;
   flex: 1 0 133.2%;
 }
 
@@ -783,7 +782,7 @@ pre {
 /* Gallery */
 
 .Gallery {
-  background: #fff;
+  background: #000;
   display: none;
 }
 
@@ -800,6 +799,7 @@ pre {
     animation-iteration-count: infinite;
     animation-direction: alternate;
     flex: 1 0 25%;
+    will-change: transform;
   }
 
   .Gallery-column:nth-child(odd) {
