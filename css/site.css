@@ -532,6 +532,7 @@ pre {
 }
 
 .Companies-itemDouble {
+  display: flex;
   flex: 1 0 133.2%;
 }
 
@@ -557,6 +558,7 @@ pre {
   }
 
   .Companies-itemDouble {
+    display: block;
     flex-direction: column;
   }
 }
@@ -783,7 +785,7 @@ pre {
 
 .Gallery {
   background: #000;
-  display: none;
+  /*display: none;*/
 }
 
 @media (min-width: 40em) {
