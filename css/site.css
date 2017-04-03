@@ -646,6 +646,9 @@ pre {
 
 .Projects-showcaseVisual {
   margin-bottom: 2rem;
+  max-height: 300px;
+  max-width: 300px;
+  overflow: hidden;
 }
 
 @media (min-width: 40em) {
@@ -656,9 +659,6 @@ pre {
 }
 
 .Projects-showcaseImage {
-  height: 300px;
-  overflow: hidden;
-  width: 300px;
 }
 
 .Projects-showcaseDetail {
@@ -953,6 +953,7 @@ pre {
 .Contact-input,
 .Contact-textarea {
   border: 0;
+  border-radius: 0;
   color: #fff;
   display: block;
   font-size: 1rem;
@@ -1150,7 +1151,6 @@ pre {
 
 .Editorial blockquote {
   font-family: 'Playfair Display', serif;
-  font-size: 1.125rem;
   font-style: italic;
   font-weight: 400;
   margin: 2rem 0;
@@ -1189,6 +1189,11 @@ pre {
   font-size: 1.3125rem;
   font-weight: 400;
 }
+
+.Editorial blockquote p:first-child {
+  font-size: 1.125rem;
+}
+
 
 /* utility classes */
 
