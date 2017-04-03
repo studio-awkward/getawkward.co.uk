@@ -180,7 +180,7 @@
     function addBgFlourish (el, pseudo, colour) {
       var className = el.getAttribute('class').split(' ')[0];
 
-      var flourish = createFlourishProps();
+      var flourish = createFlourishProps(el);
 
       var style = '.' + className + '::' + pseudo + ' {';
       style += 'width: ' + flourish.width + 'px; ';
@@ -221,7 +221,7 @@
     }
   }
 
-  function createFlourishProps () {
+  function createFlourishProps (el) {
     var flourish = {};
     if (Math.random() > 0.5) {
       flourish.width = utils.randomBetween(25, 50);
@@ -233,7 +233,7 @@
 
     flourish.verticalAlignment = (Math.random() > 0.5) ? 'top' : 'bottom';
     flourish.horizontalAlignment = (Math.random() > 0.5) ? 'left' : 'right';
-    if (Math.random() > 0.5) {
+    if (Math.random() > 0.5 || (el && el.getAttribute('data-flourish-direction') === 'vert')) {
       flourish.verticalPosition = 0;
       flourish.horizontalPosition = utils.randomBetween(0, 90);
     } else {
