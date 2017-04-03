@@ -790,7 +790,7 @@ pre {
 @media (min-width: 40em) {
   .Gallery {
     display: flex;
-    max-height: 600px;
+    max-height: 120vh;
     overflow: hidden;
   }
 
