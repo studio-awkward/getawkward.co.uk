@@ -65,6 +65,7 @@
     initFlourishes();
     initTeamSection();
     initContactForm();
+    initGallery();
     initAnalytics();
   }
 
@@ -368,6 +369,49 @@
     }
   }
 
+  function initGallery () {
+    var gallery = document.querySelector('.js-Gallery');
+    var imageCount = 24;
+    var colCount = 4;
+    var imagesPerCol = Math.round(imageCount / colCount);
+    var imageArray = utils.populateArray(imageCount);
+    var shuffledImageArray = utils.shuffleArray(imageArray);
+    var speedsArray = utils.populateArray(5);
+    var shuffledSpeedsArray = utils.shuffleArray(speedsArray);
+
+    for (var i = 0; i < colCount; i++) {
+      var col = document.createElement('div');
+      var speed = shuffledSpeedsArray.shift();
+      col.classList.add('Gallery-column', 'Gallery-column--speed' + speed);
+
+      for (var x = 0; x < imagesPerCol; x++) {
+        var item = document.createElement('div');
+        var colour = utils.pickRandomProperty(colours);
+        item.classList.add('Gallery-item', 'Gallery-item--' + colour);
+
+        // if (x  % 2 === 0) {
+        //   item.style.marginLeft = (utils.randomBetween(0, 3) * 20) + 'px';
+        //   item.style.marginRight = (utils.randomBetween(0, 3) * 20) + 'px';
+        //   item.style.marginTop = (utils.randomBetween(0, 5) * 30) + 'px';
+        //   item.style.marginBottom = (utils.randomBetween(0, 5) * 30) + 'px';
+        // }
+
+        var img = document.createElement('img');
+        var imgSrc = shuffledImageArray.shift();
+        if (imgSrc < 10) {
+          imgSrc = '0' + imgSrc;
+        }
+        img.classList.add('Gallery-image');
+        img.setAttribute('src', './images/gallery/gallery-' + imgSrc + '.jpg');
+        img.setAttribute('alt', '');
+
+        item.appendChild(img);
+        col.appendChild(item);
+      }
+      gallery.appendChild(col);
+    }
+  }
+
   function initAnalytics () {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -404,6 +448,24 @@
       for (var i = 0; i < array.length; i++) {
         callback.call(scope, i, array[i]);
       }
+    },
+
+    // http://stackoverflow.com/a/20066663
+    populateArray: function (n) {
+      return Array.apply(null, {length: n}).map(Number.call, Number);
+    },
+
+    // http://stackoverflow.com/a/6274381
+    shuffleArray: function (array) {
+      var clonedArray = this.cloneObject(array);
+      var j, x, i;
+      for (i = clonedArray.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        x = clonedArray[i - 1];
+        clonedArray[i - 1] = clonedArray[j];
+        clonedArray[j] = x;
+      }
+      return clonedArray;
     }
   };
 
