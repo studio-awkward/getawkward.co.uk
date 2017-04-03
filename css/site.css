@@ -785,18 +785,26 @@ pre {
 
 .Gallery {
   background: #000;
-  /*display: none;*/
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+.Gallery-columns {
+  animation: Gallery-anim-mobile 45s infinite alternate ease-in-out;
 }
 
 @media (min-width: 40em) {
   .Gallery {
-    display: flex;
     max-height: 150vh;
-    overflow: hidden;
+  }
+
+  .Gallery-columns {
+    animation: none;
+    display: flex;
   }
 
   .Gallery-column {
-    animation-name: Gallery-column;
+    animation-name: Gallery-anim;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -813,24 +821,29 @@ pre {
   .Gallery-column--speed2 { animation-duration: 9s; }
   .Gallery-column--speed3 { animation-duration: 12s; }
   .Gallery-column--speed4 { animation-duration: 15s; }
+}
 
-  @keyframes Gallery-column {
-    from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(0, -100%, 0); }
-  }
+@keyframes Gallery-anim-mobile {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -100%, 0); }
+}
 
-  .Gallery-item--red { background: #ee3040; }
-  .Gallery-item--yellow { background: #fac90d; }
-  .Gallery-item--orange { background: #f58200; }
-  .Gallery-item--green { background: #0e8642; }
-  .Gallery-item--blueDark { background: #1f5ba8; }
-  .Gallery-item--blueLight { background: #58c4ea; }
-  .Gallery-item--pink { background: #f792bc; }
+@keyframes Gallery-anim {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -200vh, 0); }
+}
 
-  .Gallery-image {
-    filter: contrast(100%);
-    mix-blend-mode: multiply;
-  }
+.Gallery-item--red { background: #ee3040; }
+.Gallery-item--yellow { background: #fac90d; }
+.Gallery-item--orange { background: #f58200; }
+.Gallery-item--green { background: #0e8642; }
+.Gallery-item--blueDark { background: #1f5ba8; }
+.Gallery-item--blueLight { background: #58c4ea; }
+.Gallery-item--pink { background: #f792bc; }
+
+.Gallery-image {
+  filter: contrast(100%);
+  mix-blend-mode: multiply;
 }
 
 /* Contact */

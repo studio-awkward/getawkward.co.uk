@@ -370,7 +370,7 @@
   }
 
   function initGallery () {
-    var gallery = document.querySelector('.js-Gallery');
+    var gallery = document.querySelector('.js-Gallery-columns');
     var imageCount = 44;
     var colCount = 4;
     var imagesPerCol = Math.round(imageCount / colCount);
