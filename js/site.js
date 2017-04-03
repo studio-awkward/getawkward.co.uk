@@ -371,7 +371,7 @@
 
   function initGallery () {
     var gallery = document.querySelector('.js-Gallery');
-    var imageCount = 24;
+    var imageCount = 44;
     var colCount = 4;
     var imagesPerCol = Math.round(imageCount / colCount);
     var imageArray = utils.populateArray(imageCount);
