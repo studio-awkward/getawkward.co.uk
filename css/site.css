@@ -129,7 +129,7 @@ pre {
 
 .Hero-body {
   background: url(../images/awkward-logo-white.svg) transparent no-repeat center top;
-  background-size: 190px 160px;
+  background-size: 160px 160px;
   color: #fff;
   padding-top: 180px;
   transform: rotate(1.5deg);
@@ -502,7 +502,7 @@ pre {
 
 @media (min-width: 40em) {
   .Companies-body {
-    overflow: visible;
+    overflow: auto;
   }
 }
 
@@ -865,7 +865,7 @@ pre {
 
 .Contact-details {
   background: url(../images/awkward-logo-red.svg) transparent no-repeat center top;
-  background-size: 190px 160px;
+  background-size: 160px 160px;
   margin-bottom: 2rem;
   min-width: 190px;
   padding-top: 180px;
