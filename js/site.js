@@ -60,6 +60,7 @@
 
   function init () {
     initWelcomeConsoleLog();
+    initExternalLinks();
     initHeroTicker();
     initBackgroundFlourishes();
     initFlourishes();
@@ -94,6 +95,15 @@
         console.log('%c' + log, style)
       });
     }
+  }
+
+  function initExternalLinks () {
+    var anchors = document.getElementsByTagName('a')
+    utils.forEach(anchors, function (index, anchor) {
+      if (anchor.getAttribute('href') && anchor.getAttribute('rel') === 'external') {
+        anchor.target = '_blank';
+      }
+    });
   }
 
   // adapted from: https://codepen.io/testshoot/pen/BjWPZq
