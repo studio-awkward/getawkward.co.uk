@@ -213,7 +213,7 @@
 
     function addFlourish (el) {
       var flourishColours = utils.cloneObject(colours);
-      var flourishCount = utils.randomBetween(2, 4);
+      var flourishCount = utils.randomBetween(4, 6);
       for (var i = 0; i < flourishCount; i++) {
         var colourIndex = utils.pickRandomProperty(flourishColours);
         var colour = flourishColours[colourIndex];
