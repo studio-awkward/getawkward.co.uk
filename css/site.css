@@ -797,8 +797,11 @@ pre {
   }
 
   .Gallery-columns {
-    animation: none;
     display: flex;
+  }
+
+  .Gallery-columns.is-animating {
+    animation: none;
   }
 
   .Gallery-column {
