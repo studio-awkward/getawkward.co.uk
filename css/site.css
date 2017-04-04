@@ -904,12 +904,40 @@ pre {
 }
 
 .Contact-email:hover {
+  color: #f792bc;
   text-decoration: underline;
 }
 
 .Contact-address {
   font-style: normal;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
+}
+
+.Contact-social {
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  color: #ee3040;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  padding-left: 22px;
+  text-decoration: none;
+}
+
+.Contact-social:hover {
+  color: #f792bc;
+  text-decoration: underline;
+}
+
+.Contact-social--instagram {
+  background-image: url(../images/icon-instagram.svg);
+}
+
+.Contact-social--twitter {
+  background-image: url(../images/icon-twitter.svg);
 }
 
 .Contact-form {
