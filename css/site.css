@@ -1117,6 +1117,22 @@ pre {
   z-index: 1;
 }
 
+.Flourish-block--vertical {
+  transition: height 0.25s;
+}
+
+.Flourish.is-animating .Flourish-block--vertical {
+  height: 0 !important;
+}
+
+.Flourish-block--horizontal {
+  transition: width 0.25s;
+}
+
+.Flourish.is-animating .Flourish-block--horizontal {
+  width: 0 !important;
+}
+
 /* Editorial */
 
 .Editorial {}

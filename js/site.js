@@ -209,6 +209,7 @@
     var flourishEls = document.querySelectorAll('.js-Flourish');
     utils.forEach(flourishEls, function (index, flourishEl) {
       addFlourish(flourishEl);
+      flourishEl.addEventListener('click', recreateFlourish);
     });
 
     function addFlourish (el) {
@@ -221,7 +222,7 @@
 
         flourish = createFlourishProps();
         var flourishEl = document.createElement('div');
-        flourishEl.classList.add('Flourish-block');
+        flourishEl.classList.add('Flourish-block', 'Flourish-block--' + flourish.variant);
         flourishEl.style[flourish.verticalAlignment] = flourish.verticalPosition + 'px';
         flourishEl.style[flourish.horizontalAlignment] = flourish.horizontalPosition + 'px';
         flourishEl.style.width = flourish.width + 'px';
@@ -230,14 +231,29 @@
         el.appendChild(flourishEl);
       }
     }
+
+    function recreateFlourish () {
+      var flourishEl = this;
+      var block = flourishEl.querySelector('.Flourish-block');
+      flourishEl.classList.add('is-animating');
+      block.addEventListener('transitionend', function () {
+        while (flourishEl.hasChildNodes()) {
+          flourishEl.removeChild(flourishEl.lastChild);
+        }
+        addFlourish(flourishEl);
+        setTimeout(function () { flourishEl.classList.remove('is-animating'); }, 1);
+      });
+    }
   }
 
   function createFlourishProps (el) {
     var flourish = {};
     if (Math.random() > 0.5) {
+      flourish.variant = 'horizontal';
       flourish.width = 15 * utils.randomBetween(1, 4);
       flourish.height = 15;
     } else {
+      flourish.variant = 'vertical';
       flourish.width = 15;
       flourish.height = 15 * utils.randomBetween(1, 4);
     }
@@ -306,7 +322,7 @@
 
     function highlightRandomTeamMember () {
       activeTeamMemberTimeout = setTimeout(function () {
-        var index = utils.randomBetween(0, teamMembers.length);
+        var index = utils.randomBetween(0, teamMembers.length - 1);
         setTeamHighlight(index);
         highlightRandomTeamMember();
       }, 3000);
