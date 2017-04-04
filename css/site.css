@@ -950,17 +950,6 @@ pre {
   }
 }
 
-.Contact-label {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .Contact-input,
 .Contact-textarea {
   border: 0;
@@ -1133,6 +1122,43 @@ pre {
   width: 0 !important;
 }
 
+/* Controls */
+
+.Controls {
+  display: none;
+  position: fixed;
+  z-index: 2;
+}
+
+@media (min-width: 40em) {
+  .Controls {
+    display: block;
+  }
+}
+
+.Controls-link {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  display: block;
+  height: 42px;
+  transition: background-color 0.25s;
+  width: 42px;
+}
+
+.Controls-link:hover {
+  background-color: #f792bc !important;
+}
+
+.Controls-link--contact {
+  background-image: url(../images/icon-mail.png);
+}
+
+.Controls-link--refresh {
+  background-image: url(../images/icon-refresh.png);
+}
+
+
 /* Editorial */
 
 .Editorial {}
@@ -1233,4 +1259,15 @@ pre {
   content: "";
   position: absolute;
   z-index: 1;
+}
+
+.u-visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

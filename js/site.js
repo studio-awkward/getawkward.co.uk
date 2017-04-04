@@ -67,6 +67,7 @@
     initTeamSection();
     initContactForm();
     initGallery();
+    initControls();
     initAnalytics();
   }
 
@@ -427,6 +428,44 @@
         col.appendChild(item);
       }
       gallery.appendChild(col);
+    }
+  }
+
+  function initControls () {
+    var controls = document.querySelector('.js-Controls');
+    positionControls();
+    colourControls();
+    addRefreshListener();
+
+    function positionControls () {
+      if (Math.random() > 0.5) {
+        controls.style.left = 0;
+        controls.style.bottom = utils.randomBetween(0, 70) + '%';
+      } else {
+        controls.style.right = 0;
+        controls.style.bottom = utils.randomBetween(0, 70) + '%';
+      }
+    }
+
+    function colourControls () {
+      var controlLinks = controls.querySelectorAll('.js-Controls-link');
+      var controlColours = utils.cloneObject(colours);
+      delete controlColours.pink; // rollover colour
+
+      utils.forEach(controlLinks, function (index, controlLink) {
+        var colourIndex = utils.pickRandomProperty(controlColours);
+        var colour = controlColours[colourIndex];
+        delete controlColours[colourIndex];
+        controlLink.style.backgroundColor = colour;
+      });
+    }
+
+    function addRefreshListener () {
+      var refresh = controls.querySelector('.js-Controls-link--refresh');
+      refresh.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.reload();
+      });
     }
   }
 
