@@ -787,7 +787,7 @@ pre {
   max-height: 100vh;
 }
 
-.Gallery-columns {
+.Gallery-columns.is-animating {
   animation: Gallery-anim-mobile 45s infinite alternate ease-in-out;
 }
 

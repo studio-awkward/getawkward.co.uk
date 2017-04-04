@@ -429,6 +429,10 @@
       }
       gallery.appendChild(col);
     }
+
+    setTimeout(function () {
+      gallery.classList.add('is-animating');
+    }, 1000);
   }
 
   function initControls () {
