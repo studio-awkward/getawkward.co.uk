@@ -1097,13 +1097,13 @@ pre {
 /* Flourish */
 
 .Flourish {
-  border: 1px dashed #f58200;
-  height: 100px;
+  height: 105px;
   left: 50%;
   margin-left: -50px;
+  outline: 1px dashed #f58200;
   position: absolute;
   top: 4rem;
-  width: 100px;
+  width: 105px;
 }
 
 @media (min-width: 60em) {

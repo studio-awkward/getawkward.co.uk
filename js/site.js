@@ -222,8 +222,8 @@
         flourish = createFlourishProps();
         var flourishEl = document.createElement('div');
         flourishEl.classList.add('Flourish-block');
-        flourishEl.style[flourish.verticalAlignment] = flourish.verticalPosition + '%';
-        flourishEl.style[flourish.horizontalAlignment] = flourish.horizontalPosition + '%';
+        flourishEl.style[flourish.verticalAlignment] = flourish.verticalPosition + 'px';
+        flourishEl.style[flourish.horizontalAlignment] = flourish.horizontalPosition + 'px';
         flourishEl.style.width = flourish.width + 'px';
         flourishEl.style.height = flourish.height + 'px';
         flourishEl.style.background = colour;
@@ -270,7 +270,7 @@
       var teamQuotes = document.querySelectorAll('.js-Team-quote');
       var quoteColours = utils.cloneObject(colours);
       utils.forEach(teamQuotes, function (index, teamQuote) {
-        var quoteIndex = utils.randomBetween(0, quotes.length);
+        var quoteIndex = utils.randomBetween(0, quotes.length - 1);
         var quote = quotes[quoteIndex];
 
         var colourIndex = utils.pickRandomProperty(quoteColours);
