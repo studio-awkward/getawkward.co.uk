@@ -616,7 +616,7 @@ pre {
   position: relative;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 60em) {
   .Projects {
     padding-bottom: 6rem;
     padding-top: 16rem;
@@ -638,25 +638,22 @@ pre {
   text-align: center;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 60em) {
   .Projects-showcase {
+    align-items: center;
+    display: flex;
     margin-bottom: 0;
-    padding: 0 1rem;
   }
 }
 
 .Projects-showcaseVisual {
   margin-bottom: 2rem;
-  max-height: 300px;
-  max-width: 300px;
-  overflow: hidden;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 60em) {
   .Projects-showcaseVisual {
-    display: inline-block;
+    flex: 1 0 40%;
     max-width: 400px;
-    vertical-align: middle;
   }
 }
 
@@ -664,25 +661,17 @@ pre {
   text-align: left;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 60em) {
   .Projects-showcaseDetail {
-    display: inline-block;
-    max-width: 50%;
-    padding: 1rem 4rem;
-    vertical-align: middle;
+    flex: 1 0 60%;
+    padding: 1rem 0 1rem 4rem;
   }
 }
 
 @media (min-width: 40em) {
   .Projects-items {
     display: flex;
-    padding: 0rem 4rem;
-  }
-}
-
-@media (min-width: 40em) {
-  .Projects-items {
-    padding: 1rem 8rem;
+    padding: 0rem 2rem;
   }
 }
 
@@ -695,7 +684,9 @@ pre {
     flex: 1 0 33.3%;
     padding: 1rem;
   }
+}
 
+@media (min-width: 60em) {
   .Projects-item:nth-child(1) {
     padding-left: 20px;
     position: relative;
@@ -728,7 +719,6 @@ pre {
   }
 
   .Projects-item:nth-child(3) {
-    margin-top: -1rem;
     padding-right: 20px;
     position: relative;
   }
