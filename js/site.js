@@ -1,7 +1,7 @@
 /*
  * Hello there!
  * If you are interested in our code, take a look at:
- * https://github.com/studio-awkward/getawkward.co.uk
+ * https://github.com/studio-awkward/
  */
 (function () {
 
@@ -75,7 +75,7 @@
       var logs = [
         'Hello there!',
         'If you are interested in our code, take a look at:',
-        'https://github.com/studio-awkward/getawkward.co.uk'
+        'https://github.com/studio-awkward/'
       ]
 
       var styles = [
@@ -235,20 +235,20 @@
   function createFlourishProps (el) {
     var flourish = {};
     if (Math.random() > 0.5) {
-      flourish.width = utils.randomBetween(25, 50);
-      flourish.height = utils.randomBetween(7, 15);
+      flourish.width = 15 * utils.randomBetween(1, 4);
+      flourish.height = 15;
     } else {
-      flourish.width = utils.randomBetween(7, 15);
-      flourish.height = utils.randomBetween(25, 50);
+      flourish.width = 15;
+      flourish.height = 15 * utils.randomBetween(1, 4);
     }
 
     flourish.verticalAlignment = (Math.random() > 0.5) ? 'top' : 'bottom';
     flourish.horizontalAlignment = (Math.random() > 0.5) ? 'left' : 'right';
     if (Math.random() > 0.5 || (el && el.getAttribute('data-flourish-direction') === 'vert')) {
       flourish.verticalPosition = 0;
-      flourish.horizontalPosition = utils.randomBetween(0, 90);
+      flourish.horizontalPosition = 15 * utils.randomBetween(0, 5);
     } else {
-      flourish.verticalPosition = utils.randomBetween(0, 90);
+      flourish.verticalPosition = 15 * utils.randomBetween(0, 5);
       flourish.horizontalPosition = 0;
     }
     return flourish;
@@ -280,7 +280,6 @@
         teamQuote.classList.add('is-visible');
         teamQuote.style.background = colour;
         teamQuote.querySelector('h4').textContent = quote.text;
-        // teamQuote.querySelector('p').textContent = quote.person;
       });
     }
 
@@ -399,13 +398,6 @@
         var colour = utils.pickRandomProperty(colours);
         item.classList.add('Gallery-item', 'Gallery-item--' + colour);
 
-        // if (x  % 2 === 0) {
-        //   item.style.marginLeft = (utils.randomBetween(0, 3) * 20) + 'px';
-        //   item.style.marginRight = (utils.randomBetween(0, 3) * 20) + 'px';
-        //   item.style.marginTop = (utils.randomBetween(0, 5) * 30) + 'px';
-        //   item.style.marginBottom = (utils.randomBetween(0, 5) * 30) + 'px';
-        // }
-
         var img = document.createElement('img');
         var imgSrc = shuffledImageArray.shift();
         if (imgSrc < 10) {
@@ -433,8 +425,10 @@
   }
 
   var utils = {
+
+    // http://stackoverflow.com/a/7228322
     randomBetween: function (min, max) {
-      return Math.floor(Math.random() * max) + min;
+      return Math.floor(Math.random() * (max - min + 1) + min);
     },
 
     cloneObject: function (obj) {
