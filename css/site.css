@@ -909,7 +909,7 @@ pre {
   background-repeat: no-repeat;
   background-size: 16px 16px;
   color: #ee3040;
-  display: block;
+  display: inline-block;
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 0.25rem;
