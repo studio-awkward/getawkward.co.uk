@@ -439,7 +439,7 @@
     var controls = document.querySelector('.js-Controls');
     positionControls();
     colourControls();
-    addRefreshListener();
+    addListeners();
 
     function positionControls () {
       if (Math.random() > 0.5) {
@@ -464,11 +464,18 @@
       });
     }
 
-    function addRefreshListener () {
+    function addListeners () {
       var refresh = controls.querySelector('.js-Controls-link--refresh');
       refresh.addEventListener('click', function (e) {
         e.preventDefault();
         window.location.reload();
+      });
+
+      var contact = controls.querySelector('.js-Controls-link--contact');
+      contact.addEventListener('click', function (e) {
+        e.preventDefault();
+        var contactEl = document.querySelector('.js-Contact');
+        utils.scrollTo(contactEl.offsetTop, 600);
       });
     }
   }
@@ -529,6 +536,22 @@
         clonedArray[j] = x;
       }
       return clonedArray;
+    },
+
+    // http://stackoverflow.com/a/8918062
+    scrollTo: function (to, duration) {
+      if (duration < 0) return;
+      var scrollTop = document.body.scrollTop + document.documentElement.scrollTop;
+      var difference = to - scrollTop;
+      var perTick = difference / duration * 10;
+
+      setTimeout(function() {
+        scrollTop = scrollTop + perTick;
+        document.body.scrollTop = scrollTop;
+        document.documentElement.scrollTop = scrollTop;
+        if (scrollTop === to) return;
+        utils.scrollTo(to, duration - 10);
+      }, 10);
     }
   };
 
