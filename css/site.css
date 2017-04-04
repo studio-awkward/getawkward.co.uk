@@ -190,8 +190,8 @@ pre {
   background: #fff;
   display: flex;
   justify-content: center;
-  padding-bottom: 4rem;
-  padding-top: 9rem;
+  padding-bottom: 8rem;
+  padding-top: 12rem;
   position: relative;
 }
 
@@ -243,8 +243,8 @@ pre {
   background: #f2efec;
   display: flex;
   justify-content: center;
-  padding-bottom: 2rem;
-  padding-top: 9rem;
+  padding-bottom: 6rem;
+  padding-top: 14rem;
   position: relative;
 }
 
@@ -482,8 +482,8 @@ pre {
   background: #fff;
   display: flex;
   justify-content: center;
-  padding-bottom: 3rem;
-  padding-top: 9rem;
+  padding-bottom: 6rem;
+  padding-top: 14rem;
   position: relative;
 }
 
@@ -611,8 +611,8 @@ pre {
   background: #f2efec;
   display: flex;
   justify-content: center;
-  padding-bottom: 3rem;
-  padding-top: 9rem;
+  padding-bottom: 6rem;
+  padding-top: 14rem;
   position: relative;
 }
 
@@ -633,7 +633,7 @@ pre {
 }
 
 .Projects-showcase {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   padding: 0 3rem;
   text-align: center;
 }
@@ -658,9 +658,6 @@ pre {
     max-width: 400px;
     vertical-align: middle;
   }
-}
-
-.Projects-showcaseImage {
 }
 
 .Projects-showcaseDetail {
@@ -1105,7 +1102,7 @@ pre {
   left: 50%;
   margin-left: -50px;
   position: absolute;
-  top: 2rem;
+  top: 4rem;
   width: 100px;
 }
 
