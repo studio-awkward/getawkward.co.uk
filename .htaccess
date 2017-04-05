@@ -51,7 +51,7 @@ FileETag None
 
   # CSS
 
-    ExpiresByType text/css                              "access plus 1 month"
+    ExpiresByType text/css                              "access plus 0 seconds"
 
 
   # Data interchange
@@ -80,9 +80,9 @@ FileETag None
 
   # JavaScript
 
-    ExpiresByType application/javascript                "access plus 1 month"
-    ExpiresByType application/x-javascript              "access plus 1 month"
-    ExpiresByType text/javascript                       "access plus 1 month"
+    ExpiresByType application/javascript                "access plus 0 seconds"
+    ExpiresByType application/x-javascript              "access plus 0 seconds"
+    ExpiresByType text/javascript                       "access plus 0 seconds"
 
 
   # Manifest files
@@ -94,16 +94,16 @@ FileETag None
 
   # Media files
 
-    ExpiresByType audio/ogg                             "access plus 1 month"
-    ExpiresByType image/bmp                             "access plus 1 month"
-    ExpiresByType image/gif                             "access plus 1 month"
-    ExpiresByType image/jpeg                            "access plus 1 month"
-    ExpiresByType image/png                             "access plus 1 month"
-    ExpiresByType image/svg+xml                         "access plus 1 month"
-    ExpiresByType image/webp                            "access plus 1 month"
-    ExpiresByType video/mp4                             "access plus 1 month"
-    ExpiresByType video/ogg                             "access plus 1 month"
-    ExpiresByType video/webm                            "access plus 1 month"
+    ExpiresByType audio/ogg                             "access plus 0 seconds"
+    ExpiresByType image/bmp                             "access plus 0 seconds"
+    ExpiresByType image/gif                             "access plus 0 seconds"
+    ExpiresByType image/jpeg                            "access plus 0 seconds"
+    ExpiresByType image/png                             "access plus 0 seconds"
+    ExpiresByType image/svg+xml                         "access plus 0 seconds"
+    ExpiresByType image/webp                            "access plus 0 seconds"
+    ExpiresByType video/mp4                             "access plus 0 seconds"
+    ExpiresByType video/ogg                             "access plus 0 seconds"
+    ExpiresByType video/webm                            "access plus 0 seconds"
 
 
   # Web fonts
