@@ -132,7 +132,9 @@ pre {
   background-size: 160px 160px;
   color: #fff;
   padding-top: 180px;
+  position: relative;
   transform: rotate(1.5deg);
+  z-index: 1;
 }
 
 @media (min-width: 40em) {
