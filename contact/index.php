@@ -4,7 +4,7 @@
 
   $to = "all@getawkward.co.uk";
   $subject = "[GetAwkward] Website contact form response";
-  $headers = 'From: all@getawkward.co.uk' . "\r\n" .
+  $headers = 'From: Get Awkward website <all@getawkward.co.uk>' . "\r\n" .
     'Reply-To: all@getawkward.co.uk' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
   $message = "Hello human.
@@ -28,5 +28,5 @@ That's it.
 
 Bye now.";
 
-mail($to, $subject, $message);
+mail($to, $subject, $message, $headers);
 echo $message;
