@@ -17,6 +17,20 @@
 ServerSignature Off
 
 
+# -------------
+# | Redirects |
+# -------------
+
+RewriteEngine On
+# Push all non-https traffic to https:
+# See http://kb.siteground.com/how_to_redirect_my_website_to_be_opened_through_https/
+RewriteCond %{HTTPS} !=on
+RewriteRule .* https://getawkward.co.uk%{REQUEST_URI} [R,L]
+# Redirect any https traffic starting with 'www.' to the root
+# https://www.siteground.com/kb/how_to_redirect_www_urls_to_nonwww/
+RewriteCond %{HTTP_HOST} ^www.getawkward.co.uk [NC]
+RewriteRule ^(.*)$ https://getawkward.co.uk/$1 [L,R=301]
+
 
 # ----------------------------------------------------------------------
 # | ETags                                                              |
