@@ -973,6 +973,12 @@ pre {
   }
 }
 
+.Contact-intro {
+  font-size: 0.875rem; /* 14/16 */
+  margin-bottom: 1rem;
+  transform: rotate(-1deg);
+}
+
 .Contact-input,
 .Contact-textarea {
   border: 0;
