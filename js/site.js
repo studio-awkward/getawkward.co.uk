@@ -344,12 +344,14 @@
       var name = document.getElementById('name');
       var email = document.getElementById('email');
       var phone = document.getElementById('phone');
+      var honeypot = document.getElementById('honeypot');
       var message = document.getElementById('message');
 
       var data = {
         'name': name.value,
         'email': email.value,
         'phone': phone.value,
+        'honeypot': honeypot.value,
         'message': message.value
       };
 
