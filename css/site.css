@@ -414,7 +414,6 @@ pre {
   .TeamMember--ruth .TeamMember-bio,
   .TeamMember--sam .TeamMember-bio  { background-image: url(../images/companies/osomi.png); }
   .TeamMember--paul .TeamMember-bio { background-image: url(../images/companies/pf.png); }
-  .TeamMember--pete .TeamMember-bio { background-image: url(../images/companies/pg.png); }
   .TeamMember--natalie .TeamMember-bio { background-image: url(../images/companies/nh.png); }
 
   .TeamMember--ed .TeamMember-bio::after,
@@ -423,7 +422,6 @@ pre {
   .TeamMember--ruth .TeamMember-bio::after,
   .TeamMember--sam .TeamMember-bio::after  { background-color: #e7ba00; }
   .TeamMember--paul .TeamMember-bio::after { background-color: #818285; }
-  .TeamMember--pete .TeamMember-bio::after { background-color: #f90; }
   .TeamMember--natalie .TeamMember-bio::after { background-color: #a0bcba; }
 }
 
@@ -552,7 +550,7 @@ pre {
 @media (min-width: 60em) {
   .Companies-item,
   .Companies-itemDouble {
-    flex-basis: 20%;
+    flex-basis: 25%;
   }
 
   .Companies-itemDouble {
